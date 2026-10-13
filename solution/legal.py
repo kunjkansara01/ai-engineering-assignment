@@ -1,4 +1,4 @@
-"""Q7: local ASR adapter, conservative triage, exact evidence and section lookup."""
+"""Q7: local transcription, keyword triage and exact act/section lookup."""
 import argparse
 import hashlib
 import json
@@ -39,7 +39,7 @@ def word_error_rate(reference, hypothesis):
 
 
 def transcribe_local(audio_path, model_path="tiny", language=None, model=None):
-    """A cached multilingual model; no translation and no external inference API."""
+    """Transcribe locally; reuse a supplied model or load one for this call."""
     from faster_whisper import WhisperModel
     from .benchmark import rss_mb
     start, cpu0 = time.perf_counter(), time.process_time()
@@ -70,7 +70,7 @@ class LegalPipeline:
     def analyze(self, segments, incident_date=None, jurisdiction="India"):
         start = time.perf_counter()
         if incident_date is not None:
-            date.fromisoformat(incident_date)  # caller-supplied date, never silently inferred
+            date.fromisoformat(incident_date)  # Validate the caller's date without inferring one.
         all_segments, facts, dates, parties, references, candidates = [], [], [], [], [], []
         db = {(p["act"], p["section"]): p for p in self.database["provisions"]}
         for n, segment in enumerate(segments):
@@ -81,7 +81,7 @@ class LegalPipeline:
             terms = [t for t in LEGAL_TERMS if has_term(text, t)]
             uncertain = bool(UNCERTAINTY.search(text))
             weak_asr = segment.get("avg_logprob", 0) < -1 or segment.get("no_speech_prob", 0) > .6
-            # Only confidently irrelevant full utterances are removed from the focused view.
+            # Only full small-talk matches with adequate ASR confidence are excluded.
             label = "UNCERTAIN" if weak_asr else "LEGALLY_RELEVANT" if terms else "IRRELEVANT" if SMALLTALK.fullmatch(text) else "UNCERTAIN"
             evidence = {"segment_id": sid, "start": segment.get("start"), "end": segment.get("end"), "quote": original}
             row = {**segment, **cleaned, "label": label, "negated": bool(NEGATION.search(text)),
@@ -98,7 +98,7 @@ class LegalPipeline:
                 act = (match.group(1) or match.group(3) or "").upper()
                 section = match.group(2)
                 provision = db.get((act, section))
-                # Exact statute+section identity required; never confuse IPC/BNS/BNSS.
+                # Match both act and section; a bare number stays unverified.
                 references.append({"mention": match.group(), "act": act or None, "section": section,
                                    "status": "VERIFIED_REFERENCE" if provision else "UNVERIFIED_REFERENCE",
                                    "provision": provision, "evidence": evidence,

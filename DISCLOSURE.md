@@ -1,4 +1,4 @@
-## Candidate to complete truthfully before submission
+## Candidate details
 
 - Candidate name: **KUNJ KANSARA**
 - Actual personal time spent reviewing, coding, testing and preparing the submission: **2 Hour**

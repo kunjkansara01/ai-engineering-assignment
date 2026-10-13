@@ -1,10 +1,10 @@
 # Local-first AI engineering assignment
 
-Seven runnable solutions, a self-contained notebook, test fixtures, actual local OCR and speech inference, and measured results. AI assistance is disclosed in `DISCLOSURE.md`.
+Seven solutions covering document processing, local OCR, project QA and local speech processing. See [RESULTS.md](RESULTS.md) for measurements, [docs/DESIGN.md](docs/DESIGN.md) for design and limitations, and [DISCLOSURE.md](DISCLOSURE.md) for AI assistance and candidate details.
 
 ## Quick start
 
-Tested on Linux with Python 3.12 and Tesseract 5. Python 3.11–3.12 is recommended. Initial installation and first speech-model download need internet; subsequent inference is local. No API key is required.
+The recorded benchmark used Linux, Python 3.12 and Tesseract 5. The notebook targets Python 3.11–3.12. Initial installation and the first speech-model download need internet. Inference runs locally without an API key.
 
 ```bash
 python -m venv .venv
@@ -27,9 +27,11 @@ python -m unittest discover -s tests -v
 python run_demo.py --audio
 ```
 
-For a faster run without downloading speech weights: `python run_demo.py`. This explicitly reports audio as `NOT_RUN`; it is not an ASR benchmark. The full command runs both clean and noisy audio through a real multilingual Whisper tiny model on CPU. First model download is roughly 75 MB; install/model-download time is excluded from inference metrics but model loading is reported separately. `av==16.0.1` is pinned because PyAV 19 removed an argument used by faster-whisper 1.2.1.
+Use `python run_demo.py` to skip speech inference; it reports audio as `NOT_RUN`. With `--audio`, multilingual Whisper tiny transcribes the clean and noisy clips on CPU. The first model download is roughly 75 MB. Measurements exclude installation and download time; model loading is timed separately. The `av==16.0.1` pin avoids a PyAV 19 API change affecting faster-whisper 1.2.1.
 
-Open `Assignment_Solutions.ipynb` in Jupyter or upload it to Google Colab. The notebook includes the source, tests, local legal index and audio as an embedded reproducible bundle. Run all cells in order. It creates an `assignment_workspace` directory. The notebook's setup installs missing dependencies and installs Tesseract automatically only on Linux when running as root (such as Colab). Local Windows/macOS users must install the system executable first. The final audio cells run by default and download the model if needed. There are no interactive inputs.
+Open `Assignment_Solutions.ipynb` in Jupyter or upload it to Colab, then run all cells in order. It extracts bundled source, tests, documentation, legal fixtures and audio into `assignment_workspace`. Setup installs missing or mismatched pinned Python packages, including audio dependencies. It installs Tesseract automatically only on Linux as root; install it yourself on Windows/macOS. Audio runs by default and downloads the model if needed. Colab execution has not been verified.
+
+`python build_notebook.py` rebuilds the notebook and embedded files from this repository, clearing saved outputs. `python execute_notebook.py` executes it with an in-process IPython shell and saves outputs; it does not test an external Jupyter kernel. Run the executor from a scratch directory with a copy of the notebook to keep generated files separate from repository results.
 
 ## Files and requirements coverage
 
@@ -40,12 +42,12 @@ Open `Assignment_Solutions.ipynb` in Jupyter or upload it to Google Colab. The n
 | Q3 | `solution/records.py: review_ocr, approve_correction, lookup_medicine` | `outputs/q3.json`; correction and dictionary tests |
 | Q4 | `solution/records.py: extract_record, validate_record` | Valid, incomplete, unreadable and swapped examples in `outputs/q4.json` |
 | Q5 | `solution/vision.py: OCRPipeline` | Actual Tesseract extraction, rotation fallback, cache, recapture; `outputs/q5.json` |
-| Q6 | `solution/chatbot.py` | Independent project sources under `data/knowledge`; `outputs/q6.json`; failure cases in `docs/DESIGN.md` |
+| Q6 | `solution/chatbot.py` | Curated facts exported to `data/knowledge`; `outputs/q6.json`; failure cases in `docs/DESIGN.md` |
 | Q7 | `solution/legal.py` | Local audio + transcript processing, source-backed legal lookup; `outputs/q7.json`, `outputs/audio_benchmark.json` |
 | Testing | `tests/test_solution.py` | `outputs/test_results.txt` |
 | Results | `RESULTS.md` | Small-fixture accuracy, timing, CPU/RAM, actual ASR WER and limits |
 | Explanation | `docs/DESIGN.md` | Assumptions, component design, trade-offs and production improvements |
-| Disclosure | `DISCLOSURE.md` | AI tools, usage level, observed build duration and candidate fields |
+| Disclosure | `DISCLOSURE.md` | AI tools, usage level and candidate details |
 
 ## Use your own data
 
@@ -58,21 +60,21 @@ result = OCRPipeline().process(cv2.imread('document.png'), project='my-project')
 print(result)
 ```
 
-English printed text is supported in this prototype. Rotation fallback covers 90-degree increments. Difficult handwriting, severe shadows, perspective distortion and low-confidence text need review; this submission does not claim reliable handwriting recognition.
+OCR uses English printed text and tries rotations in 90-degree increments. Handwriting accuracy is unmeasured. Severe shadows, perspective distortion and low-confidence text need review.
 
 ### Project chatbot
 
 ```python
 from solution.chatbot import KnowledgeBot, Principal
 bot = KnowledgeBot()
-user = Principal('alice')  # supplied by trusted application code, never from a user chat message
+user = Principal('alice')  # Identity must come from trusted application code.
 session = bot.start_session(user, 'atlas')
 print(bot.ask(user, session, 'What is the leave allowance?'))
 print(bot.ask(user, session, 'How many days is that?'))
 print(bot.ask(user, session, 'What is the API rate limit?'))
 ```
 
-`Principal` is a trusted in-process identity, **not an authentication server**. Do not expose construction of this object or the permission dictionary to remote clients. This is a curated, structured-fact, extractive QA prototype with conservative lexical retrieval, not a general-purpose LLM chatbot. It returns exact source statements. Supply custom records with the same metadata schema to extend the knowledge base.
+The application must authenticate users before constructing `Principal`. Remote clients must not control this identity or the permission dictionary. The bot quotes curated fact records using lexical matching. To extend its sources, pass records with the same metadata fields; it does not ingest the exported Markdown files.
 
 ### Local audio
 
@@ -81,13 +83,13 @@ python -m solution.legal conversation.wav --model tiny --reference reference.txt
 python -m solution.legal hindi.wav --model small --language hi
 ```
 
-For Hinglish, omit `--language` to allow multilingual detection; code switching accuracy must be evaluated on real recordings. Audio is never sent to an API. Supplying a local model directory makes startup independent of model downloads. Models persist in the standard Hugging Face cache. Do not use the English-only `.en` models for Hindi/Hinglish.
+For Hinglish, omit `--language` to allow language detection and use a multilingual model, not an English-only `.en` model. Hindi/Hinglish speech accuracy is unmeasured. Models use the Hugging Face cache; pass a local model directory to avoid downloads at startup.
 
-## Submission steps still requiring the candidate
+## Before submission
 
-1. Read, run and understand the code, particularly the documented limitations.
-2. Fill the candidate name, **actual personal time spent**, and any additional assistance in `DISCLOSURE.md`.
-3. Upload the `.ipynb` to Colab/Kaggle and enable reviewer access, or upload this project to a Git repository and share its link. Include the downloadable notebook as required. No hosted repository or notebook URL has been created by this package.
-4. Add real document/handwriting and Hindi/Hinglish audio results if the reviewer expects measured performance beyond the supplied synthetic demonstration.
+1. Review and run the code, including the documented limitations.
+2. Confirm your name, **actual personal time spent** and assistance in `DISCLOSURE.md`.
+3. Add a reviewer-accessible repository or Colab/Kaggle link there and include the downloadable notebook. The recorded build did not create a hosted link.
+4. Add real document, handwriting and Hindi/Hinglish audio results if required by the reviewer.
 
-This package is a working minimal prototype, not a production OCR, clinical, or legal decision system. All people, project policies and recordings in the fixtures are synthetic.
+All fixture people, policies and recordings are synthetic. This prototype is not validated for clinical or legal decisions.

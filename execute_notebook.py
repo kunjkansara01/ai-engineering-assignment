@@ -1,8 +1,7 @@
 """Execute notebook Python cells in order without kernel sockets.
 
-For restricted containers only: a fresh Python process with an IPython shell.
-This checks real cell execution, including displayed outputs, but is not a
-Google Colab or external Jupyter-kernel compatibility test.
+Uses an in-process IPython shell and saves captured outputs. This does not test
+Google Colab or an external Jupyter kernel. Run from a fresh Python process.
 """
 import argparse
 from pathlib import Path

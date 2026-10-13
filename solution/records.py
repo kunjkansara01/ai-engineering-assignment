@@ -1,4 +1,4 @@
-"""Q1, Q3 and Q4: deterministic processing with explicit audit trails."""
+"""Q1/Q3/Q4: deduplicate records, review OCR and validate labelled fields."""
 import math
 import re
 import unicodedata
@@ -98,7 +98,7 @@ def approve_correction(row, corrected_text, reason, reviewer):
 
 
 def lookup_medicine(name, dictionary):
-    """Caller supplies a versioned trusted dictionary; fuzzy results are suggestions."""
+    """Match a supplied versioned dictionary; return fuzzy matches as suggestions."""
     names = {n.casefold(): n for n in dictionary["names"]}
     key = name.strip().casefold()
     return {"original": name, "exact_match": names.get(key),
@@ -115,7 +115,7 @@ DURATION = re.compile(r"(?:for\s+)?[1-9]\d*\s+(?:days?|weeks?|months?)", re.I)
 
 
 def validate_record(record):
-    """Validate syntax only. Never certify a medicine or dosage as clinically safe."""
+    """Check field syntax, not clinical safety."""
     errors = []
     for field in FIELDS.values():
         v = record.get(field)
@@ -136,7 +136,7 @@ def validate_record(record):
 
 
 def extract_record(text):
-    """Label-based extraction with evidence, duplicate ambiguity and no guessing."""
+    """Extract labelled fields with line evidence; leave duplicates and missing fields null."""
     record = dict.fromkeys(FIELDS.values())
     evidence, errors, seen = {}, [], set()
     for line_number, line in enumerate(text.splitlines(), 1):

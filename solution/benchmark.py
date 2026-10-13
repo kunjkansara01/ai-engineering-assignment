@@ -1,4 +1,4 @@
-"""Transparent small-fixture benchmarks; no claim of production accuracy."""
+"""Measure fixture accuracy, timing and parent-process resources."""
 import json
 import platform
 import statistics
@@ -9,7 +9,7 @@ import psutil
 
 
 def rss_mb():
-    """Current parent RSS; proc/self also works in PID-remapped sandboxes."""
+    """Read parent RSS in MiB; /proc/self supports PID-remapped sandboxes."""
     try:
         for line in Path('/proc/self/status').read_text().splitlines():
             if line.startswith('VmRSS:'):

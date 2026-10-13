@@ -65,7 +65,7 @@ def run(audio=False, model='tiny'):
     results['legal_text_benchmark']=benchmark_text_legal(legal,cases)
     results['audio_benchmark']={'status':'NOT_RUN','reason':'Run with --audio for actual local ASR; transcript fixtures are not ASR results.'}
     if audio:
-        # Load once and reuse across recordings; separate startup from inference.
+        # Reuse the model for both clips and time loading separately.
         import time
         from faster_whisper import WhisperModel
         t0=time.perf_counter()

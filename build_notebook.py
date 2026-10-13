@@ -1,4 +1,4 @@
-"""Build a portable, self-contained notebook from the reviewable project files."""
+"""Bundle project files and demos into a self-contained notebook."""
 import base64
 import io
 import json
@@ -23,13 +23,13 @@ def build():
     cells=[]
     md=lambda s:cells.append(nbf.v4.new_markdown_cell(s))
     code=lambda s:cells.append(nbf.v4.new_code_cell(s))
-    md('''# AI engineering assignment — seven working solutions
+    md('''# AI engineering assignment — seven solutions
 
-**Run all cells in order.** Python 3.11–3.12; no API keys. Internet is needed for initial dependencies and the multilingual Whisper tiny model. Source files, tests and synthetic audio are embedded below, so this notebook does not depend on a Git repository URL or an uploaded ZIP.
+**Run all cells in order.** Python 3.11–3.12; no API keys. Initial dependency installation and the Whisper tiny download need internet. Source, tests, documentation and synthetic audio are embedded below.
 
-The work uses ChatGPT/Codex at **High** assistance level. Fill your name, actual personal time spent and any additional assistance in the final disclosure before submission. All fixtures are synthetic. Read the limitations: this is a tested minimal prototype, not validated clinical/medical or legal decision software.
+ChatGPT/Codex assistance was **High**; see the final disclosure for candidate details. All fixtures are synthetic. This prototype is not validated for clinical or legal decisions.
 
-Audio runs by default. To work entirely offline after installing the core dependencies, set `RUN_AUDIO=False` in the last section; the notebook will explicitly report ASR as not run.''')
+Audio runs by default. Set `RUN_AUDIO=False` in the benchmark section to skip inference and the model download. Setup still checks all pinned dependencies, including audio packages. Offline execution needs those packages and Tesseract installed, plus local model weights if audio is enabled.''')
     md('## 0. Reconstruct the included project')
     code('''import base64, io, zipfile, os, sys
 from pathlib import Path
@@ -71,7 +71,7 @@ print(subprocess.check_output(["tesseract", "--version"], text=True).splitlines(
 ''')
     md('''## Q1. Deduplicate and classify
 
-Latest timestamp wins; first occurrence wins tied timestamps. An audit trail explains discarded records. The continuous REVIEW interval is `[0.50, 0.80)`. Expected result: 3 ACCEPT, 1 REVIEW, 1 RETAKE; average 0.734.''')
+Keep the latest timestamp per ID and the first occurrence on ties. Discarded duplicates get audit entries. REVIEW covers `[0.50, 0.80)`. Expect 3 ACCEPT, 1 REVIEW, 1 RETAKE and mean quality 0.734.''')
     code('''import json
 from solution.records import *
 def show(value):
@@ -79,7 +79,7 @@ def show(value):
 show(process_documents(DOCUMENTS))''')
     md('''## Q2. OpenCV quality checks
 
-Laplacian variance >=100, brightness 70–250 and percentile contrast >=30 are initial heuristic thresholds. These are not device-calibrated. Sparse pages, texture and noise can mislead the metrics. Test clear, blurred, dark, rotated and blank synthetic images.''')
+Test clear, blurred, dark, rotated and blank fixtures. The gate requires Laplacian variance >=100, brightness 70–250 and percentile contrast >=30. These uncalibrated thresholds can misjudge sparse or noisy pages.''')
     code('''from solution.vision import make_samples, check_quality, OCRPipeline
 from IPython.display import display, Image
 samples = make_samples("data/images")
@@ -89,22 +89,22 @@ for name in ("clear", "blurred", "dark"):
     display(Image(filename=f"data/images/{name}.png", width=600))''')
     md('''## Q3. Confidence and auditable corrections
 
-HIGH >=0.90; REVIEW [0.60,0.90); LOW <0.60. Original output is immutable evidence. `twlce daily` is only a proposed correction until reviewed. A dictionary fuzzy match is only a suggestion; the illustrative dictionary below is synthetic, not a trusted clinical vocabulary.''')
+HIGH >=0.90; REVIEW [0.60,0.90); LOW <0.60. Original text is retained. `twlce daily` needs review before correction. Fuzzy dictionary matches are suggestions; the dictionary below is synthetic.''')
     code('''reviewed = review_ocr(OCR_RESULTS)
 show(reviewed)
 show(approve_correction(reviewed[2], "twice daily", "Synthetic example: reviewer checked source", "demo-reviewer"))
 show(lookup_medicine("Paracetamo", {"names": ["Paracetamol"], "version": "demo-v1", "source": "synthetic test only"}))''')
     md('''## Q4. JSON extraction and validation
 
-Missing or ambiguous values become null, duplicate labels are flagged, and swapped strength/frequency values are never guessed. A valid syntax result still requires human review. LLM extension: constrained JSON schema → deterministic validation → literal source-span checks → bounded repair or review; see `docs/DESIGN.md`.''')
+Missing, empty and duplicate fields become null. Ambiguous text and suspected swaps are retained and flagged. Even syntax-valid records require review. The design document describes a possible LLM extension with schema and source-span checks.''')
     code('''examples = {"valid": SAMPLE_TEXT,
     "missing_medicine": SAMPLE_TEXT.replace("Medicine: Paracetamol\\n", ""),
     "unreadable_duration": SAMPLE_TEXT.replace("5 days", "unreadable"),
     "swapped": SAMPLE_TEXT.replace("Strength: 500 mg", "Strength: Twice daily").replace("Frequency: Twice daily", "Frequency: 500 mg")}
 show({name: extract_record(text) for name, text in examples.items()})''')
-    md('''## Q5. Actual local OCR pipeline
+    md('''## Q5. Local OCR pipeline
 
-Quality gate → preprocessing → Tesseract LSTM → bounded rotation fallback → schema/evidence validation → JSON or review. Repeated identical images use a project-scoped bounded cache. This demo uses printed English documents; it does not claim tested handwriting accuracy. No API calls are made.''')
+Usable images pass through preprocessing, Tesseract, rotation fallback and field validation. Failed quality checks request recapture; failed extraction checks require review. Identical grayscale images use a bounded project cache. The fixture is printed English; handwriting accuracy is unmeasured. No API is called.''')
     code('''ocr = OCRPipeline()
 for name in ("clear", "blurred", "dark", "rotated"):
     result = ocr.process(samples[name])
@@ -113,9 +113,9 @@ for name in ("clear", "blurred", "dark", "rotated"):
 show({"cache_hit": ocr.process(samples["clear"])["cache_hit"]})''')
     md('''## Q6. Isolated multi-project chatbot
 
-The application supplies a trusted principal; this is not a remote authentication system. ACL checks precede retrieval. Conversation memory is user/session/project scoped. Answers quote exact sources. The minimal prototype supports curated fact records and three topics, with abstention on unsupported details. Source files are generated by the final benchmark cell.
+The application supplies identity; session ownership and project permissions are checked before retrieval. Answers quote curated leave, API or retention facts and abstain on unsupported details. The final benchmark cell exports those facts as Markdown.
 
-Failures demonstrated: incorrect cross-project retrieval, stale topic after switching, missing evidence, conflicting sources, and cross-user session access. Fixes are documented and tested.''')
+The examples exercise follow-up context, topic changes, missing evidence, conflicting sources, project-switch requests and cross-user access rejection.''')
     code('''from solution.chatbot import KnowledgeBot, Principal
 bot = KnowledgeBot()
 alice = Principal("alice")
@@ -128,7 +128,7 @@ except PermissionError as error:
     print("Cross-user access correctly rejected:", error)''')
     md('''## Q7. Legal transcript processing
 
-Preserve all originals, negations, uncertainty and timestamps. Remove only confidently irrelevant small talk from the focused view. Extract explicit parties/dates and retain facts as unverified statements with evidence. Match statute + section exactly against the versioned two-entry official-source title index. Candidates are for review, never legal applicability decisions. Hindi/Hinglish text is tested; audio below is synthetic English only.''')
+Keep original text and timestamps, and flag negation and uncertainty. Only full small-talk matches with adequate ASR confidence leave the focused view. Parties and dates retain segment evidence. Act/section references must match the two-entry title index; matches do not establish applicability. Hindi/Hinglish is tested as text only; audio uses synthetic English.''')
     code('''from solution.legal import LegalPipeline, word_error_rate
 database = json.loads(Path("data/legal_db.json").read_text())
 legal = LegalPipeline(database)
@@ -140,9 +140,9 @@ show({"labels": [{"text": s["original_text"], "label": s["label"], "negated": s[
     code('''completed = subprocess.run([sys.executable, "-m", "unittest", "discover", "-s", "tests", "-v"], capture_output=True, text=True)
 print(completed.stdout + completed.stderr)
 assert completed.returncode == 0, "Tests failed"''')
-    md('''## Measured benchmarks, including real local speech inference
+    md('''## Benchmarks and local speech inference
 
-The next cell loads multilingual Whisper tiny, then measures clean and noisy 7.62-second English synthetic clips. It reports actual WER and resources. A model download failure is a setup failure, never a zero-error result. Set `RUN_AUDIO=False` only when intentionally skipping ASR. All results are small-fixture measurements, not production accuracy estimates.''')
+The next cell transcribes clean and noisy 7.62-second synthetic English clips with multilingual Whisper tiny and reports WER, timing and resources. Download failures stop execution. `RUN_AUDIO=False` skips speech inference. These fixture measurements do not estimate production accuracy.''')
     code('''RUN_AUDIO = True
 MODEL = os.environ.get("ASSIGNMENT_MODEL_PATH", "tiny")
 from run_demo import run
@@ -153,7 +153,7 @@ if RUN_AUDIO:
         for row in results["audio_benchmark"]["cases"]]})''')
     md('''## Documentation, limitations and candidate disclosure
 
-Read the included design document for each pipeline stage's purpose, inputs/outputs, accuracy trade-offs, latency and API cost. The candidate must add their actual personal time and share a reviewer-accessible notebook/repository link. No personal time or external hosting is fabricated.''')
+The design document explains validation, access controls, thresholds and limitations. Confirm the candidate details and actual personal time in the disclosure, and add a reviewer-accessible notebook or repository link.''')
     code('''from IPython.display import Markdown
 display(Markdown(Path("docs/DESIGN.md").read_text()))
 display(Markdown(Path("DISCLOSURE.md").read_text()))''')

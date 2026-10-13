@@ -1,4 +1,4 @@
-"""Q6: access-filtered, evidence-only QA across independent project stores."""
+"""Q6: quote curated project facts after checking session ownership and access."""
 import copy
 import re
 import uuid
@@ -14,7 +14,7 @@ def tokens(text):
 
 @dataclass(frozen=True)
 class Principal:
-    """Created by the trusted application after authentication, not by a chat prompt."""
+    """Identity supplied by trusted application code; this class does not authenticate."""
     user_id: str
 
 
@@ -27,7 +27,7 @@ class Session:
 
 
 def demo_documents():
-    # Two independent sources per project; all records are synthetic.
+    # Synthetic policies include conflicting Atlas retention values.
     return [
         {"id": "atlas-hr", "project": "atlas", "topic": "leave", "key": "annual_leave", "value": "20 days",
          "text": "Atlas annual leave allowance is 20 days.", "source": "atlas/hr.md#annual-leave", "version": "1"},
@@ -79,7 +79,7 @@ class KnowledgeBot:
         return copy.deepcopy(self.session(principal, sid).history)
 
     def ask(self, principal, sid, question):
-        s = self.session(principal, sid)  # recheck ACL on EVERY turn
+        s = self.session(principal, sid)  # Recheck ownership and access after revocation.
         if not isinstance(question, str) or not question.strip() or len(question) > 2000:
             raise ValueError("Question must contain 1–2000 characters")
         q = tokens(question)
@@ -99,9 +99,9 @@ class KnowledgeBot:
             elif topic is None:
                 response = {"status": "MISSING_EVIDENCE", "answer": "No supporting evidence found in the selected project.", "sources": []}
             else:
-                # Physical metadata filtering before lexical retrieval; no global top-k.
+                # Restrict candidates to the session's project and resolved topic.
                 allowed = [d for d in self.documents if d["project"] == s.project and d["topic"] == topic]
-                # A narrow fact prototype must abstain on unsupported aspects such as carryover.
+                # Unknown terms, such as carryover, require abstention.
                 content_q = q - project_names - {"it", "that", "those", "this", "again", "explain", "per", "policy"}
                 vocabulary = set().union(*(tokens(d["text"]) for d in allowed)) if allowed else set()
                 unknown = content_q - vocabulary - set().union(*topic_terms.values()) - {"day", "annual", "allowance"}
@@ -113,7 +113,7 @@ class KnowledgeBot:
                     for d in allowed:
                         groups.setdefault(d["key"], set()).add(d["value"])
                     conflict = any(len(values) > 1 for values in groups.values())
-                    # Evidence is never treated as executable instructions or an LLM prompt.
+                    # Return source text directly; documents cannot invoke code or tools.
                     response = {"status": "CONTRADICTORY" if conflict else "ANSWERED",
                                 "answer": ("Conflicting sources: " if conflict else "") + " ".join(d["text"] for d in allowed),
                                 "sources": [{"id": d["id"], "source": d["source"], "version": d["version"],

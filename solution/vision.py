@@ -1,4 +1,4 @@
-"""Q2/Q5: actual OpenCV checks and local Tesseract LSTM extraction."""
+"""Q2/Q5: OpenCV quality checks and local Tesseract OCR."""
 import copy
 import hashlib
 import time
@@ -40,7 +40,7 @@ def check_quality(image, blur_threshold=100., min_brightness=70., max_brightness
 
 
 def make_samples(directory):
-    """Reproducible synthetic fixtures, not photographs or handwriting benchmarks."""
+    """Create a printed-text fixture and blurred, dark, rotated and blank variants."""
     directory = Path(directory)
     directory.mkdir(parents=True, exist_ok=True)
     image = np.full((560, 1200), 245, np.uint8)
@@ -79,7 +79,7 @@ def run_tesseract(image, psm=6):
 
 
 class OCRPipeline:
-    """Bounded per-instance memory cache. No remote API or patient data upload."""
+    """Local OCR with a bounded, project-scoped cache per instance."""
     def __init__(self, max_cache=32):
         if max_cache < 0:
             raise ValueError("max_cache must be nonnegative")
@@ -99,13 +99,13 @@ class OCRPipeline:
             return out
         quality = check_quality(gray)
         out = {"quality": quality, "cache_hit": False, "api_cost_usd": 0., "attempts": []}
-        # Exposure failures can conceal evidence; ask for recapture rather than fabricate it.
+        # Failed quality checks require recapture before OCR.
         if not quality["is_usable"]:
             out.update(route="RECAPTURE", extraction=None, structured=None)
         else:
             prepared = preprocess(gray)
             candidates = []
-            # One fast pass; bounded rotation fallback only if schema/quality fails.
+            # Try rotations until the schema passes and mean confidence reaches 0.85.
             for angle in (0, 90, 180, 270):
                 candidate = np.rot90(prepared, angle // 90).copy()
                 t0 = time.perf_counter()
