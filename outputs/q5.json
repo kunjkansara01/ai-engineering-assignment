@@ -1,0 +1,703 @@
+{
+  "clear": {
+    "quality": {
+      "is_usable": true,
+      "blur_score": 920.765,
+      "brightness": 239.545,
+      "contrast": 230.0,
+      "reason": "Passed heuristic quality checks"
+    },
+    "cache_hit": false,
+    "api_cost_usd": 0.0,
+    "attempts": [
+      {
+        "rotation_ccw": 0,
+        "mean_confidence": 0.9592857142857143,
+        "latency_ms": 270.962
+      }
+    ],
+    "route": "LOCAL_OCR",
+    "extraction": {
+      "text": "Patient: Rahul Sharma\nMedicine: Paracetamol\nStrength: 500 mg\nFrequency: Twice daily\nDuration: 5 days",
+      "words": [
+        {
+          "text": "Patient:",
+          "confidence": 0.96,
+          "box": [
+            58,
+            66,
+            143,
+            31
+          ]
+        },
+        {
+          "text": "Rahul",
+          "confidence": 0.95,
+          "box": [
+            227,
+            67,
+            102,
+            30
+          ]
+        },
+        {
+          "text": "Sharma",
+          "confidence": 0.96,
+          "box": [
+            354,
+            67,
+            145,
+            30
+          ]
+        },
+        {
+          "text": "Medicine:",
+          "confidence": 0.96,
+          "box": [
+            58,
+            156,
+            172,
+            31
+          ]
+        },
+        {
+          "text": "Paracetamol",
+          "confidence": 0.96,
+          "box": [
+            256,
+            157,
+            239,
+            30
+          ]
+        },
+        {
+          "text": "Strength:",
+          "confidence": 0.96,
+          "box": [
+            57,
+            247,
+            173,
+            39
+          ]
+        },
+        {
+          "text": "500",
+          "confidence": 0.96,
+          "box": [
+            255,
+            247,
+            71,
+            30
+          ]
+        },
+        {
+          "text": "mg",
+          "confidence": 0.96,
+          "box": [
+            351,
+            256,
+            55,
+            30
+          ]
+        },
+        {
+          "text": "Frequency:",
+          "confidence": 0.96,
+          "box": [
+            58,
+            337,
+            204,
+            39
+          ]
+        },
+        {
+          "text": "Twice",
+          "confidence": 0.96,
+          "box": [
+            285,
+            336,
+            101,
+            31
+          ]
+        },
+        {
+          "text": "daily",
+          "confidence": 0.96,
+          "box": [
+            410,
+            336,
+            85,
+            40
+          ]
+        },
+        {
+          "text": "Duration:",
+          "confidence": 0.96,
+          "box": [
+            58,
+            426,
+            169,
+            31
+          ]
+        },
+        {
+          "text": "5",
+          "confidence": 0.96,
+          "box": [
+            252,
+            427,
+            22,
+            30
+          ]
+        },
+        {
+          "text": "days",
+          "confidence": 0.96,
+          "box": [
+            297,
+            428,
+            85,
+            38
+          ]
+        }
+      ],
+      "mean_confidence": 0.9592857142857143
+    },
+    "structured": {
+      "record": {
+        "patient_name": "Rahul Sharma",
+        "medicine_name": "Paracetamol",
+        "strength": "500 mg",
+        "frequency": "Twice daily",
+        "duration": "5 days",
+        "validation_status": "REVIEW_REQUIRED"
+      },
+      "schema_valid": true,
+      "errors": [],
+      "evidence": {
+        "patient_name": [
+          {
+            "line": 1,
+            "text": "Patient: Rahul Sharma",
+            "value": "Rahul Sharma"
+          }
+        ],
+        "medicine_name": [
+          {
+            "line": 2,
+            "text": "Medicine: Paracetamol",
+            "value": "Paracetamol"
+          }
+        ],
+        "strength": [
+          {
+            "line": 3,
+            "text": "Strength: 500 mg",
+            "value": "500 mg"
+          }
+        ],
+        "frequency": [
+          {
+            "line": 4,
+            "text": "Frequency: Twice daily",
+            "value": "Twice daily"
+          }
+        ],
+        "duration": [
+          {
+            "line": 5,
+            "text": "Duration: 5 days",
+            "value": "5 days"
+          }
+        ]
+      },
+      "original_text": "Patient: Rahul Sharma\nMedicine: Paracetamol\nStrength: 500 mg\nFrequency: Twice daily\nDuration: 5 days"
+    },
+    "latency_ms": 282.97
+  },
+  "blurred": {
+    "quality": {
+      "is_usable": false,
+      "blur_score": 0.358,
+      "brightness": 239.546,
+      "contrast": 68.0,
+      "reason": "blurred or no visible text"
+    },
+    "cache_hit": false,
+    "api_cost_usd": 0.0,
+    "attempts": [],
+    "route": "RECAPTURE",
+    "extraction": null,
+    "structured": null,
+    "latency_ms": 11.806
+  },
+  "dark": {
+    "quality": {
+      "is_usable": false,
+      "blur_score": 29.915,
+      "brightness": 43.001,
+      "contrast": 42.0,
+      "reason": "blurred or no visible text; underexposed"
+    },
+    "cache_hit": false,
+    "api_cost_usd": 0.0,
+    "attempts": [],
+    "route": "RECAPTURE",
+    "extraction": null,
+    "structured": null,
+    "latency_ms": 11.359
+  },
+  "rotated": {
+    "quality": {
+      "is_usable": true,
+      "blur_score": 920.765,
+      "brightness": 239.545,
+      "contrast": 230.0,
+      "reason": "Passed heuristic quality checks"
+    },
+    "cache_hit": false,
+    "api_cost_usd": 0.0,
+    "attempts": [
+      {
+        "rotation_ccw": 0,
+        "mean_confidence": 0.5109836065573771,
+        "latency_ms": 413.803
+      },
+      {
+        "rotation_ccw": 90,
+        "mean_confidence": 0.9592857142857143,
+        "latency_ms": 191.827
+      }
+    ],
+    "route": "LOCAL_OCR",
+    "extraction": {
+      "text": "Patient: Rahul Sharma\nMedicine: Paracetamol\nStrength: 500 mg\nFrequency: Twice daily\nDuration: 5 days",
+      "words": [
+        {
+          "text": "Patient:",
+          "confidence": 0.96,
+          "box": [
+            58,
+            66,
+            143,
+            31
+          ]
+        },
+        {
+          "text": "Rahul",
+          "confidence": 0.95,
+          "box": [
+            227,
+            67,
+            102,
+            30
+          ]
+        },
+        {
+          "text": "Sharma",
+          "confidence": 0.96,
+          "box": [
+            354,
+            67,
+            145,
+            30
+          ]
+        },
+        {
+          "text": "Medicine:",
+          "confidence": 0.96,
+          "box": [
+            58,
+            156,
+            172,
+            31
+          ]
+        },
+        {
+          "text": "Paracetamol",
+          "confidence": 0.96,
+          "box": [
+            256,
+            157,
+            239,
+            30
+          ]
+        },
+        {
+          "text": "Strength:",
+          "confidence": 0.96,
+          "box": [
+            57,
+            247,
+            173,
+            39
+          ]
+        },
+        {
+          "text": "500",
+          "confidence": 0.96,
+          "box": [
+            255,
+            247,
+            71,
+            30
+          ]
+        },
+        {
+          "text": "mg",
+          "confidence": 0.96,
+          "box": [
+            351,
+            256,
+            55,
+            30
+          ]
+        },
+        {
+          "text": "Frequency:",
+          "confidence": 0.96,
+          "box": [
+            58,
+            337,
+            204,
+            39
+          ]
+        },
+        {
+          "text": "Twice",
+          "confidence": 0.96,
+          "box": [
+            285,
+            336,
+            101,
+            31
+          ]
+        },
+        {
+          "text": "daily",
+          "confidence": 0.96,
+          "box": [
+            410,
+            336,
+            85,
+            40
+          ]
+        },
+        {
+          "text": "Duration:",
+          "confidence": 0.96,
+          "box": [
+            58,
+            426,
+            169,
+            31
+          ]
+        },
+        {
+          "text": "5",
+          "confidence": 0.96,
+          "box": [
+            252,
+            427,
+            22,
+            30
+          ]
+        },
+        {
+          "text": "days",
+          "confidence": 0.96,
+          "box": [
+            297,
+            428,
+            85,
+            38
+          ]
+        }
+      ],
+      "mean_confidence": 0.9592857142857143
+    },
+    "structured": {
+      "record": {
+        "patient_name": "Rahul Sharma",
+        "medicine_name": "Paracetamol",
+        "strength": "500 mg",
+        "frequency": "Twice daily",
+        "duration": "5 days",
+        "validation_status": "REVIEW_REQUIRED"
+      },
+      "schema_valid": true,
+      "errors": [],
+      "evidence": {
+        "patient_name": [
+          {
+            "line": 1,
+            "text": "Patient: Rahul Sharma",
+            "value": "Rahul Sharma"
+          }
+        ],
+        "medicine_name": [
+          {
+            "line": 2,
+            "text": "Medicine: Paracetamol",
+            "value": "Paracetamol"
+          }
+        ],
+        "strength": [
+          {
+            "line": 3,
+            "text": "Strength: 500 mg",
+            "value": "500 mg"
+          }
+        ],
+        "frequency": [
+          {
+            "line": 4,
+            "text": "Frequency: Twice daily",
+            "value": "Twice daily"
+          }
+        ],
+        "duration": [
+          {
+            "line": 5,
+            "text": "Duration: 5 days",
+            "value": "5 days"
+          }
+        ]
+      },
+      "original_text": "Patient: Rahul Sharma\nMedicine: Paracetamol\nStrength: 500 mg\nFrequency: Twice daily\nDuration: 5 days"
+    },
+    "latency_ms": 617.482
+  },
+  "blank": {
+    "quality": {
+      "is_usable": false,
+      "blur_score": 0.0,
+      "brightness": 245.0,
+      "contrast": 0.0,
+      "reason": "blurred or no visible text; low contrast"
+    },
+    "cache_hit": false,
+    "api_cost_usd": 0.0,
+    "attempts": [],
+    "route": "RECAPTURE",
+    "extraction": null,
+    "structured": null,
+    "latency_ms": 15.741
+  },
+  "cached_clear": {
+    "quality": {
+      "is_usable": true,
+      "blur_score": 920.765,
+      "brightness": 239.545,
+      "contrast": 230.0,
+      "reason": "Passed heuristic quality checks"
+    },
+    "cache_hit": true,
+    "api_cost_usd": 0.0,
+    "attempts": [
+      {
+        "rotation_ccw": 0,
+        "mean_confidence": 0.9592857142857143,
+        "latency_ms": 270.962
+      }
+    ],
+    "route": "LOCAL_OCR",
+    "extraction": {
+      "text": "Patient: Rahul Sharma\nMedicine: Paracetamol\nStrength: 500 mg\nFrequency: Twice daily\nDuration: 5 days",
+      "words": [
+        {
+          "text": "Patient:",
+          "confidence": 0.96,
+          "box": [
+            58,
+            66,
+            143,
+            31
+          ]
+        },
+        {
+          "text": "Rahul",
+          "confidence": 0.95,
+          "box": [
+            227,
+            67,
+            102,
+            30
+          ]
+        },
+        {
+          "text": "Sharma",
+          "confidence": 0.96,
+          "box": [
+            354,
+            67,
+            145,
+            30
+          ]
+        },
+        {
+          "text": "Medicine:",
+          "confidence": 0.96,
+          "box": [
+            58,
+            156,
+            172,
+            31
+          ]
+        },
+        {
+          "text": "Paracetamol",
+          "confidence": 0.96,
+          "box": [
+            256,
+            157,
+            239,
+            30
+          ]
+        },
+        {
+          "text": "Strength:",
+          "confidence": 0.96,
+          "box": [
+            57,
+            247,
+            173,
+            39
+          ]
+        },
+        {
+          "text": "500",
+          "confidence": 0.96,
+          "box": [
+            255,
+            247,
+            71,
+            30
+          ]
+        },
+        {
+          "text": "mg",
+          "confidence": 0.96,
+          "box": [
+            351,
+            256,
+            55,
+            30
+          ]
+        },
+        {
+          "text": "Frequency:",
+          "confidence": 0.96,
+          "box": [
+            58,
+            337,
+            204,
+            39
+          ]
+        },
+        {
+          "text": "Twice",
+          "confidence": 0.96,
+          "box": [
+            285,
+            336,
+            101,
+            31
+          ]
+        },
+        {
+          "text": "daily",
+          "confidence": 0.96,
+          "box": [
+            410,
+            336,
+            85,
+            40
+          ]
+        },
+        {
+          "text": "Duration:",
+          "confidence": 0.96,
+          "box": [
+            58,
+            426,
+            169,
+            31
+          ]
+        },
+        {
+          "text": "5",
+          "confidence": 0.96,
+          "box": [
+            252,
+            427,
+            22,
+            30
+          ]
+        },
+        {
+          "text": "days",
+          "confidence": 0.96,
+          "box": [
+            297,
+            428,
+            85,
+            38
+          ]
+        }
+      ],
+      "mean_confidence": 0.9592857142857143
+    },
+    "structured": {
+      "record": {
+        "patient_name": "Rahul Sharma",
+        "medicine_name": "Paracetamol",
+        "strength": "500 mg",
+        "frequency": "Twice daily",
+        "duration": "5 days",
+        "validation_status": "REVIEW_REQUIRED"
+      },
+      "schema_valid": true,
+      "errors": [],
+      "evidence": {
+        "patient_name": [
+          {
+            "line": 1,
+            "text": "Patient: Rahul Sharma",
+            "value": "Rahul Sharma"
+          }
+        ],
+        "medicine_name": [
+          {
+            "line": 2,
+            "text": "Medicine: Paracetamol",
+            "value": "Paracetamol"
+          }
+        ],
+        "strength": [
+          {
+            "line": 3,
+            "text": "Strength: 500 mg",
+            "value": "500 mg"
+          }
+        ],
+        "frequency": [
+          {
+            "line": 4,
+            "text": "Frequency: Twice daily",
+            "value": "Twice daily"
+          }
+        ],
+        "duration": [
+          {
+            "line": 5,
+            "text": "Duration: 5 days",
+            "value": "5 days"
+          }
+        ]
+      },
+      "original_text": "Patient: Rahul Sharma\nMedicine: Paracetamol\nStrength: 500 mg\nFrequency: Twice daily\nDuration: 5 days"
+    },
+    "latency_ms": 1.144
+  }
+}

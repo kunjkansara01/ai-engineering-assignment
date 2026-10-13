@@ -1,0 +1,16 @@
+{
+  "version": "bns-title-index-v1-2026-10-12",
+  "jurisdiction": "India",
+  "scope": "Two verified section titles only. Not a complete or continuously updated legal database. No subsection or legal applicability inference.",
+  "verification": "Section titles checked against official NCRB/India Code search-index excerpts on 2026-10-12. Full source fetch timed out; amendments and full statutory elements have NOT been validated.",
+  "provisions": [
+    {"act": "BNS", "section": "318", "title": "Cheating", "effective_from": "2024-07-01", "effective_to": null,
+     "source": "https://cytrain.ncrb.gov.in/staticpage/web_pages/ChaptersBNS.html",
+     "official_act": "https://www.indiacode.nic.in/handle/123456789/20062",
+     "keywords": ["cheat", "fraud", "धोखा", "dhokha"]},
+    {"act": "BNS", "section": "351", "title": "Criminal intimidation", "effective_from": "2024-07-01", "effective_to": null,
+     "source": "https://cytrain.ncrb.gov.in/staticpage/web_pages/ChaptersBNS.html",
+     "official_act": "https://www.indiacode.nic.in/handle/123456789/20062",
+     "keywords": ["threat", "धमकी", "dhamki"]}
+  ]
+}

@@ -1,0 +1,56 @@
+test_access_denied (test_solution.ChatTests.test_access_denied) ... ok
+test_ambiguous_topics (test_solution.ChatTests.test_ambiguous_topics) ... ok
+test_conflicting_documents (test_solution.ChatTests.test_conflicting_documents) ... ok
+test_cross_user_session (test_solution.ChatTests.test_cross_user_session) ... ok
+test_explicit_project_switch (test_solution.ChatTests.test_explicit_project_switch) ... ok
+test_followup (test_solution.ChatTests.test_followup) ... ok
+test_injection (test_solution.ChatTests.test_injection) ... ok
+test_missing_evidence (test_solution.ChatTests.test_missing_evidence) ... ok
+test_prompt_cannot_switch_project (test_solution.ChatTests.test_prompt_cannot_switch_project) ... ok
+test_retrieval (test_solution.ChatTests.test_retrieval) ... ok
+test_revoked_access (test_solution.ChatTests.test_revoked_access) ... ok
+test_topic_switch (test_solution.ChatTests.test_topic_switch) ... ok
+test_unsupported_detail (test_solution.ChatTests.test_unsupported_detail) ... ok
+test_candidate_not_conclusion (test_solution.LegalTests.test_candidate_not_conclusion) ... ok
+test_explicit_verified_reference (test_solution.LegalTests.test_explicit_verified_reference) ... ok
+test_hindi_hinglish (test_solution.LegalTests.test_hindi_hinglish) ... ok
+test_low_asr_confidence (test_solution.LegalTests.test_low_asr_confidence) ... ok
+test_mixed_smalltalk_fact (test_solution.LegalTests.test_mixed_smalltalk_fact) ... ok
+test_negation_preserved (test_solution.LegalTests.test_negation_preserved) ... ok
+test_no_invented_section (test_solution.LegalTests.test_no_invented_section) ... ok
+test_parties_dates_evidence (test_solution.LegalTests.test_parties_dates_evidence) ... ok
+test_smalltalk_archived (test_solution.LegalTests.test_smalltalk_archived) ... ok
+test_temporal_guard (test_solution.LegalTests.test_temporal_guard) ... ok
+test_uncertain_retained (test_solution.LegalTests.test_uncertain_retained) ... ok
+test_wer (test_solution.LegalTests.test_wer) ... ok
+test_ambiguous_duration (test_solution.RecordTests.test_ambiguous_duration) ... ok
+test_approval_audit (test_solution.RecordTests.test_approval_audit) ... ok
+test_bad_timestamp (test_solution.RecordTests.test_bad_timestamp) ... ok
+test_clean_preserves_original (test_solution.RecordTests.test_clean_preserves_original) ... ok
+test_dictionary_does_not_autocorrect (test_solution.RecordTests.test_dictionary_does_not_autocorrect) ... ok
+test_duplicate_field_no_guess (test_solution.RecordTests.test_duplicate_field_no_guess) ... ok
+test_duplicate_tie (test_solution.RecordTests.test_duplicate_tie) ... ok
+test_empty (test_solution.RecordTests.test_empty) ... ok
+test_invalid_duration (test_solution.RecordTests.test_invalid_duration) ... ok
+test_invalid_scores (test_solution.RecordTests.test_invalid_scores) ... ok
+test_latest_duplicate (test_solution.RecordTests.test_latest_duplicate) ... ok
+test_missing_medicine (test_solution.RecordTests.test_missing_medicine) ... ok
+test_no_mutation (test_solution.RecordTests.test_no_mutation) ... ok
+test_no_silent_semantic_change (test_solution.RecordTests.test_no_silent_semantic_change) ... ok
+test_ocr_boundaries (test_solution.RecordTests.test_ocr_boundaries) ... ok
+test_ocr_sample_counts (test_solution.RecordTests.test_ocr_sample_counts) ... ok
+test_out_of_order (test_solution.RecordTests.test_out_of_order) ... ok
+test_quality_edges (test_solution.RecordTests.test_quality_edges) ... ok
+test_swapped_fields (test_solution.RecordTests.test_swapped_fields) ... ok
+test_valid_record (test_solution.RecordTests.test_valid_record) ... ok
+test_actual_ocr_and_cache (test_solution.VisionTests.test_actual_ocr_and_cache) ... ok
+test_actual_rotated_ocr (test_solution.VisionTests.test_actual_rotated_ocr) ... ok
+test_clear_blur_dark (test_solution.VisionTests.test_clear_blur_dark) ... ok
+test_invalid_image (test_solution.VisionTests.test_invalid_image) ... ok
+test_project_cache_isolation (test_solution.VisionTests.test_project_cache_isolation) ... ok
+test_recapture_does_not_call_ocr (test_solution.VisionTests.test_recapture_does_not_call_ocr) ... ok
+
+----------------------------------------------------------------------
+Ran 51 tests in 1.262s
+
+OK

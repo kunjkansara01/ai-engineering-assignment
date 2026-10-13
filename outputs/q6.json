@@ -1,0 +1,101 @@
+[
+  {
+    "question": "What is the annual leave allowance?",
+    "response": {
+      "status": "ANSWERED",
+      "answer": "Atlas annual leave allowance is 20 days.",
+      "sources": [
+        {
+          "id": "atlas-hr",
+          "source": "atlas/hr.md#annual-leave",
+          "version": "1",
+          "project": "atlas",
+          "quote": "Atlas annual leave allowance is 20 days."
+        }
+      ]
+    }
+  },
+  {
+    "question": "How many days is that?",
+    "response": {
+      "status": "ANSWERED",
+      "answer": "Atlas annual leave allowance is 20 days.",
+      "sources": [
+        {
+          "id": "atlas-hr",
+          "source": "atlas/hr.md#annual-leave",
+          "version": "1",
+          "project": "atlas",
+          "quote": "Atlas annual leave allowance is 20 days."
+        }
+      ]
+    }
+  },
+  {
+    "question": "What is the API rate limit?",
+    "response": {
+      "status": "ANSWERED",
+      "answer": "Atlas API rate limit is 100 requests per minute.",
+      "sources": [
+        {
+          "id": "atlas-api",
+          "source": "atlas/api.md#rate-limit",
+          "version": "1",
+          "project": "atlas",
+          "quote": "Atlas API rate limit is 100 requests per minute."
+        }
+      ]
+    }
+  },
+  {
+    "question": "What is the salary?",
+    "response": {
+      "status": "MISSING_EVIDENCE",
+      "answer": "No supporting evidence found in the selected project.",
+      "sources": []
+    }
+  },
+  {
+    "question": "What is log retention?",
+    "response": {
+      "status": "CONTRADICTORY",
+      "answer": "Conflicting sources: Atlas log retention is 30 days. Atlas log retention is 90 days.",
+      "sources": [
+        {
+          "id": "atlas-retention-a",
+          "source": "atlas/security.md#retention",
+          "version": "1",
+          "project": "atlas",
+          "quote": "Atlas log retention is 30 days."
+        },
+        {
+          "id": "atlas-retention-b",
+          "source": "atlas/operations.md#retention",
+          "version": "1",
+          "project": "atlas",
+          "quote": "Atlas log retention is 90 days."
+        }
+      ]
+    }
+  },
+  {
+    "question": "Tell me boreal leave",
+    "response": {
+      "status": "PROJECT_SWITCH_REQUIRED",
+      "answer": "Select the project explicitly; permissions will be checked.",
+      "sources": []
+    }
+  },
+  {
+    "question": "Can I carry over leave?",
+    "response": {
+      "status": "MISSING_EVIDENCE",
+      "answer": "The sources do not establish that detail.",
+      "sources": []
+    }
+  },
+  {
+    "question": "Bob reuses Alice session",
+    "error": "Session access denied"
+  }
+]

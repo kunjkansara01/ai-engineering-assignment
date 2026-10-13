@@ -1,0 +1,20 @@
+[
+  {"id":"e1","text":"Hello.","expected":"IRRELEVANT"},
+  {"id":"e2","text":"Party: Rahul Sharma, I paid on 2025-08-01.","expected":"LEGALLY_RELEVANT"},
+  {"id":"e3","text":"I did not sign the agreement.","expected":"LEGALLY_RELEVANT"},
+  {"id":"e4","text":"The complaint mentions BNS section 351.","expected":"LEGALLY_RELEVANT"},
+  {"id":"e5","text":"Maybe he was there.","expected":"UNCERTAIN"},
+  {"id":"h1","text":"नमस्ते","expected":"IRRELEVANT"},
+  {"id":"h2","text":"उसने मुझे धमकी नहीं दी।","expected":"LEGALLY_RELEVANT"},
+  {"id":"h3","text":"मेरे पास भुगतान का सबूत है।","expected":"LEGALLY_RELEVANT"},
+  {"id":"h4","text":"शायद वह वहाँ था।","expected":"UNCERTAIN"},
+  {"id":"m1","text":"Usne dhamki nahi di.","expected":"LEGALLY_RELEVANT"},
+  {"id":"m2","text":"Maine paise diye aur saboot hai.","expected":"LEGALLY_RELEVANT"},
+  {"id":"m3","text":"Chai chahiye?","expected":"IRRELEVANT"},
+  {"id":"m4","text":"Shayad woh aaya tha.","expected":"UNCERTAIN"},
+  {"id":"e6","text":"Hello, the court hearing is on 12 October 2026.","expected":"LEGALLY_RELEVANT"},
+  {"id":"e7","text":"He mentioned section 999.","expected":"LEGALLY_RELEVANT"},
+  {"id":"e8","text":"He took my phone.","expected":"UNCERTAIN"},
+  {"id":"e9","text":"Perhaps the witness was mistaken.","expected":"LEGALLY_RELEVANT"},
+  {"id":"e10","text":"Nice weather today.","expected":"IRRELEVANT"}
+]

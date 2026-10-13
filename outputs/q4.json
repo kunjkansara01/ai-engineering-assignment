@@ -1,0 +1,222 @@
+{
+  "valid": {
+    "record": {
+      "patient_name": "Rahul Sharma",
+      "medicine_name": "Paracetamol",
+      "strength": "500 mg",
+      "frequency": "Twice daily",
+      "duration": "5 days",
+      "validation_status": "REVIEW_REQUIRED"
+    },
+    "schema_valid": true,
+    "errors": [],
+    "evidence": {
+      "patient_name": [
+        {
+          "line": 1,
+          "text": "Patient: Rahul Sharma",
+          "value": "Rahul Sharma"
+        }
+      ],
+      "medicine_name": [
+        {
+          "line": 2,
+          "text": "Medicine: Paracetamol",
+          "value": "Paracetamol"
+        }
+      ],
+      "strength": [
+        {
+          "line": 3,
+          "text": "Strength: 500 mg",
+          "value": "500 mg"
+        }
+      ],
+      "frequency": [
+        {
+          "line": 4,
+          "text": "Frequency: Twice daily",
+          "value": "Twice daily"
+        }
+      ],
+      "duration": [
+        {
+          "line": 5,
+          "text": "Duration: 5 days",
+          "value": "5 days"
+        }
+      ]
+    },
+    "original_text": "Patient: Rahul Sharma\nMedicine: Paracetamol\nStrength: 500 mg\nFrequency: Twice daily\nDuration: 5 days"
+  },
+  "missing_medicine": {
+    "record": {
+      "patient_name": "Rahul Sharma",
+      "medicine_name": null,
+      "strength": "500 mg",
+      "frequency": "Twice daily",
+      "duration": "5 days",
+      "validation_status": "REVIEW_REQUIRED"
+    },
+    "schema_valid": false,
+    "errors": [
+      {
+        "field": "medicine_name",
+        "code": "MISSING"
+      }
+    ],
+    "evidence": {
+      "patient_name": [
+        {
+          "line": 1,
+          "text": "Patient: Rahul Sharma",
+          "value": "Rahul Sharma"
+        }
+      ],
+      "strength": [
+        {
+          "line": 2,
+          "text": "Strength: 500 mg",
+          "value": "500 mg"
+        }
+      ],
+      "frequency": [
+        {
+          "line": 3,
+          "text": "Frequency: Twice daily",
+          "value": "Twice daily"
+        }
+      ],
+      "duration": [
+        {
+          "line": 4,
+          "text": "Duration: 5 days",
+          "value": "5 days"
+        }
+      ]
+    },
+    "original_text": "Patient: Rahul Sharma\nStrength: 500 mg\nFrequency: Twice daily\nDuration: 5 days"
+  },
+  "unreadable_duration": {
+    "record": {
+      "patient_name": "Rahul Sharma",
+      "medicine_name": "Paracetamol",
+      "strength": "500 mg",
+      "frequency": "Twice daily",
+      "duration": "unreadable",
+      "validation_status": "REVIEW_REQUIRED"
+    },
+    "schema_valid": false,
+    "errors": [
+      {
+        "field": "duration",
+        "code": "AMBIGUOUS"
+      },
+      {
+        "field": "duration",
+        "code": "INVALID_FORMAT"
+      }
+    ],
+    "evidence": {
+      "patient_name": [
+        {
+          "line": 1,
+          "text": "Patient: Rahul Sharma",
+          "value": "Rahul Sharma"
+        }
+      ],
+      "medicine_name": [
+        {
+          "line": 2,
+          "text": "Medicine: Paracetamol",
+          "value": "Paracetamol"
+        }
+      ],
+      "strength": [
+        {
+          "line": 3,
+          "text": "Strength: 500 mg",
+          "value": "500 mg"
+        }
+      ],
+      "frequency": [
+        {
+          "line": 4,
+          "text": "Frequency: Twice daily",
+          "value": "Twice daily"
+        }
+      ],
+      "duration": [
+        {
+          "line": 5,
+          "text": "Duration: unreadable",
+          "value": "unreadable"
+        }
+      ]
+    },
+    "original_text": "Patient: Rahul Sharma\nMedicine: Paracetamol\nStrength: 500 mg\nFrequency: Twice daily\nDuration: unreadable"
+  },
+  "swapped": {
+    "record": {
+      "patient_name": "Rahul Sharma",
+      "medicine_name": "Paracetamol",
+      "strength": "Twice daily",
+      "frequency": "500 mg",
+      "duration": "5 days",
+      "validation_status": "REVIEW_REQUIRED"
+    },
+    "schema_valid": false,
+    "errors": [
+      {
+        "field": "strength",
+        "code": "INVALID_FORMAT"
+      },
+      {
+        "field": "frequency",
+        "code": "INVALID_FORMAT"
+      },
+      {
+        "field": "strength/frequency",
+        "code": "POSSIBLY_SWAPPED"
+      }
+    ],
+    "evidence": {
+      "patient_name": [
+        {
+          "line": 1,
+          "text": "Patient: Rahul Sharma",
+          "value": "Rahul Sharma"
+        }
+      ],
+      "medicine_name": [
+        {
+          "line": 2,
+          "text": "Medicine: Paracetamol",
+          "value": "Paracetamol"
+        }
+      ],
+      "strength": [
+        {
+          "line": 3,
+          "text": "Strength: Twice daily",
+          "value": "Twice daily"
+        }
+      ],
+      "frequency": [
+        {
+          "line": 4,
+          "text": "Frequency: 500 mg",
+          "value": "500 mg"
+        }
+      ],
+      "duration": [
+        {
+          "line": 5,
+          "text": "Duration: 5 days",
+          "value": "5 days"
+        }
+      ]
+    },
+    "original_text": "Patient: Rahul Sharma\nMedicine: Paracetamol\nStrength: Twice daily\nFrequency: 500 mg\nDuration: 5 days"
+  }
+}

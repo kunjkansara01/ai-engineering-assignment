@@ -1,0 +1,33 @@
+{
+  "fixture_count": 18,
+  "repeats": 30,
+  "label_accuracy": 1.0,
+  "confusion_matrix": {
+    "LEGALLY_RELEVANT": {
+      "LEGALLY_RELEVANT": 10,
+      "IRRELEVANT": 0,
+      "UNCERTAIN": 0
+    },
+    "IRRELEVANT": {
+      "LEGALLY_RELEVANT": 0,
+      "IRRELEVANT": 4,
+      "UNCERTAIN": 0
+    },
+    "UNCERTAIN": {
+      "LEGALLY_RELEVANT": 0,
+      "IRRELEVANT": 0,
+      "UNCERTAIN": 4
+    }
+  },
+  "p50_ms": 1.1676679999936823,
+  "p95_ms": 1.4355690000229515,
+  "scope": "Synthetic hand-labelled transcript fixtures; not audio ASR accuracy or an independent evaluation set.",
+  "resources": {
+    "wall_ms": 36.374,
+    "parent_cpu_seconds": 0.0366,
+    "parent_cpu_percent_one_core": 100.53,
+    "sampled_peak_parent_rss_mb": 144.12,
+    "memory_sampling_interval_ms": 10,
+    "api_cost_usd": 0.0
+  }
+}

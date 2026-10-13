@@ -1,0 +1,5 @@
+-r requirements.txt
+faster-whisper==1.2.1
+soundfile==0.13.1
+socksio==1.0.0
+av==16.0.1

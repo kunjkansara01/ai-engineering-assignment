@@ -1,0 +1,945 @@
+{
+  "status": "MEASURED",
+  "model_load_ms": 386.1831390001953,
+  "cases": [
+    {
+      "file": "legal_clear.wav",
+      "asr": {
+        "segments": [
+          {
+            "id": "1",
+            "start": 0.0,
+            "end": 7.36,
+            "text": " I paid the money on the first of August. I did not sign the agreement. The witness said there was a threat. I have the payment receipt as evidence.",
+            "avg_logprob": -0.16440674869550598,
+            "no_speech_prob": 0.006164782214909792,
+            "words": [
+              {
+                "word": " I",
+                "start": 0.0,
+                "end": 0.4,
+                "probability": 0.6877918839454651
+              },
+              {
+                "word": " paid",
+                "start": 0.4,
+                "end": 0.62,
+                "probability": 0.9794824719429016
+              },
+              {
+                "word": " the",
+                "start": 0.62,
+                "end": 0.78,
+                "probability": 0.9927974343299866
+              },
+              {
+                "word": " money",
+                "start": 0.78,
+                "end": 1.04,
+                "probability": 0.9978546500205994
+              },
+              {
+                "word": " on",
+                "start": 1.04,
+                "end": 1.34,
+                "probability": 0.991517961025238
+              },
+              {
+                "word": " the",
+                "start": 1.34,
+                "end": 1.46,
+                "probability": 0.9324713945388794
+              },
+              {
+                "word": " first",
+                "start": 1.46,
+                "end": 1.72,
+                "probability": 0.9479653835296631
+              },
+              {
+                "word": " of",
+                "start": 1.72,
+                "end": 1.96,
+                "probability": 0.7177530527114868
+              },
+              {
+                "word": " August.",
+                "start": 1.96,
+                "end": 2.26,
+                "probability": 0.88632732629776
+              },
+              {
+                "word": " I",
+                "start": 2.5,
+                "end": 2.6,
+                "probability": 0.9932969212532043
+              },
+              {
+                "word": " did",
+                "start": 2.6,
+                "end": 2.8,
+                "probability": 0.9928845167160034
+              },
+              {
+                "word": " not",
+                "start": 2.8,
+                "end": 3.08,
+                "probability": 0.998119056224823
+              },
+              {
+                "word": " sign",
+                "start": 3.08,
+                "end": 3.36,
+                "probability": 0.988243579864502
+              },
+              {
+                "word": " the",
+                "start": 3.36,
+                "end": 3.56,
+                "probability": 0.988593339920044
+              },
+              {
+                "word": " agreement.",
+                "start": 3.56,
+                "end": 3.88,
+                "probability": 0.9833510518074036
+              },
+              {
+                "word": " The",
+                "start": 4.3,
+                "end": 4.3,
+                "probability": 0.9862217307090759
+              },
+              {
+                "word": " witness",
+                "start": 4.3,
+                "end": 4.56,
+                "probability": 0.980769157409668
+              },
+              {
+                "word": " said",
+                "start": 4.56,
+                "end": 4.9,
+                "probability": 0.9956527948379517
+              },
+              {
+                "word": " there",
+                "start": 4.9,
+                "end": 5.12,
+                "probability": 0.9541978240013123
+              },
+              {
+                "word": " was",
+                "start": 5.12,
+                "end": 5.3,
+                "probability": 0.9948274493217468
+              },
+              {
+                "word": " a",
+                "start": 5.3,
+                "end": 5.44,
+                "probability": 0.9883024096488953
+              },
+              {
+                "word": " threat.",
+                "start": 5.44,
+                "end": 5.68,
+                "probability": 0.9983032941818237
+              },
+              {
+                "word": " I",
+                "start": 5.74,
+                "end": 5.88,
+                "probability": 0.9482611417770386
+              },
+              {
+                "word": " have",
+                "start": 5.88,
+                "end": 6.12,
+                "probability": 0.9707596898078918
+              },
+              {
+                "word": " the",
+                "start": 6.12,
+                "end": 6.22,
+                "probability": 0.9962049126625061
+              },
+              {
+                "word": " payment",
+                "start": 6.22,
+                "end": 6.5,
+                "probability": 0.9897597432136536
+              },
+              {
+                "word": " receipt",
+                "start": 6.5,
+                "end": 6.86,
+                "probability": 0.6986325979232788
+              },
+              {
+                "word": " as",
+                "start": 6.86,
+                "end": 7.06,
+                "probability": 0.9738180637359619
+              },
+              {
+                "word": " evidence.",
+                "start": 7.06,
+                "end": 7.36,
+                "probability": 0.9818834066390991
+              }
+            ]
+          }
+        ],
+        "language": "en",
+        "language_probability": 1,
+        "audio_seconds": 7.62,
+        "model": "tiny multilingual (CPU int8, two threads)",
+        "api_cost_usd": 0.0,
+        "latency_ms": 633.9231959998415,
+        "model_load_ms": 0.00025000008463393897,
+        "real_time_factor": 0.08319202047242014,
+        "cpu_seconds": 1.8072098909999998,
+        "rss_after_mb": 319.375,
+        "transcript": "I paid the money on the first of August. I did not sign the agreement. The witness said there was a threat. I have the payment receipt as evidence."
+      },
+      "resources": {
+        "wall_ms": 634.589,
+        "parent_cpu_seconds": 1.8098,
+        "parent_cpu_percent_one_core": 285.19,
+        "sampled_peak_parent_rss_mb": 367.43,
+        "memory_sampling_interval_ms": 10,
+        "api_cost_usd": 0.0
+      },
+      "wer": 0.0,
+      "legal": {
+        "segments": [
+          {
+            "id": "1",
+            "start": 0.0,
+            "end": 7.36,
+            "text": " I paid the money on the first of August. I did not sign the agreement. The witness said there was a threat. I have the payment receipt as evidence.",
+            "avg_logprob": -0.16440674869550598,
+            "no_speech_prob": 0.006164782214909792,
+            "words": [
+              {
+                "word": " I",
+                "start": 0.0,
+                "end": 0.4,
+                "probability": 0.6877918839454651
+              },
+              {
+                "word": " paid",
+                "start": 0.4,
+                "end": 0.62,
+                "probability": 0.9794824719429016
+              },
+              {
+                "word": " the",
+                "start": 0.62,
+                "end": 0.78,
+                "probability": 0.9927974343299866
+              },
+              {
+                "word": " money",
+                "start": 0.78,
+                "end": 1.04,
+                "probability": 0.9978546500205994
+              },
+              {
+                "word": " on",
+                "start": 1.04,
+                "end": 1.34,
+                "probability": 0.991517961025238
+              },
+              {
+                "word": " the",
+                "start": 1.34,
+                "end": 1.46,
+                "probability": 0.9324713945388794
+              },
+              {
+                "word": " first",
+                "start": 1.46,
+                "end": 1.72,
+                "probability": 0.9479653835296631
+              },
+              {
+                "word": " of",
+                "start": 1.72,
+                "end": 1.96,
+                "probability": 0.7177530527114868
+              },
+              {
+                "word": " August.",
+                "start": 1.96,
+                "end": 2.26,
+                "probability": 0.88632732629776
+              },
+              {
+                "word": " I",
+                "start": 2.5,
+                "end": 2.6,
+                "probability": 0.9932969212532043
+              },
+              {
+                "word": " did",
+                "start": 2.6,
+                "end": 2.8,
+                "probability": 0.9928845167160034
+              },
+              {
+                "word": " not",
+                "start": 2.8,
+                "end": 3.08,
+                "probability": 0.998119056224823
+              },
+              {
+                "word": " sign",
+                "start": 3.08,
+                "end": 3.36,
+                "probability": 0.988243579864502
+              },
+              {
+                "word": " the",
+                "start": 3.36,
+                "end": 3.56,
+                "probability": 0.988593339920044
+              },
+              {
+                "word": " agreement.",
+                "start": 3.56,
+                "end": 3.88,
+                "probability": 0.9833510518074036
+              },
+              {
+                "word": " The",
+                "start": 4.3,
+                "end": 4.3,
+                "probability": 0.9862217307090759
+              },
+              {
+                "word": " witness",
+                "start": 4.3,
+                "end": 4.56,
+                "probability": 0.980769157409668
+              },
+              {
+                "word": " said",
+                "start": 4.56,
+                "end": 4.9,
+                "probability": 0.9956527948379517
+              },
+              {
+                "word": " there",
+                "start": 4.9,
+                "end": 5.12,
+                "probability": 0.9541978240013123
+              },
+              {
+                "word": " was",
+                "start": 5.12,
+                "end": 5.3,
+                "probability": 0.9948274493217468
+              },
+              {
+                "word": " a",
+                "start": 5.3,
+                "end": 5.44,
+                "probability": 0.9883024096488953
+              },
+              {
+                "word": " threat.",
+                "start": 5.44,
+                "end": 5.68,
+                "probability": 0.9983032941818237
+              },
+              {
+                "word": " I",
+                "start": 5.74,
+                "end": 5.88,
+                "probability": 0.9482611417770386
+              },
+              {
+                "word": " have",
+                "start": 5.88,
+                "end": 6.12,
+                "probability": 0.9707596898078918
+              },
+              {
+                "word": " the",
+                "start": 6.12,
+                "end": 6.22,
+                "probability": 0.9962049126625061
+              },
+              {
+                "word": " payment",
+                "start": 6.22,
+                "end": 6.5,
+                "probability": 0.9897597432136536
+              },
+              {
+                "word": " receipt",
+                "start": 6.5,
+                "end": 6.86,
+                "probability": 0.6986325979232788
+              },
+              {
+                "word": " as",
+                "start": 6.86,
+                "end": 7.06,
+                "probability": 0.9738180637359619
+              },
+              {
+                "word": " evidence.",
+                "start": 7.06,
+                "end": 7.36,
+                "probability": 0.9818834066390991
+              }
+            ],
+            "original_text": " I paid the money on the first of August. I did not sign the agreement. The witness said there was a threat. I have the payment receipt as evidence.",
+            "corrected_text": "I paid the money on the first of August. I did not sign the agreement. The witness said there was a threat. I have the payment receipt as evidence.",
+            "reason": "Normalize Unicode NFC and whitespace",
+            "semantic_change": false,
+            "label": "LEGALLY_RELEVANT",
+            "negated": true,
+            "uncertain_statement": false,
+            "terms": [
+              "agreement",
+              "paid",
+              "payment",
+              "threat",
+              "evidence",
+              "witness",
+              "fir"
+            ]
+          }
+        ],
+        "focused_segment_ids": [
+          "1"
+        ],
+        "parties": [],
+        "facts": [
+          {
+            "statement": " I paid the money on the first of August. I did not sign the agreement. The witness said there was a threat. I have the payment receipt as evidence.",
+            "negated": true,
+            "uncertain": false,
+            "evidence": {
+              "segment_id": "1",
+              "start": 0.0,
+              "end": 7.36,
+              "quote": " I paid the money on the first of August. I did not sign the agreement. The witness said there was a threat. I have the payment receipt as evidence."
+            },
+            "status": "UNVERIFIED_STATEMENT"
+          }
+        ],
+        "dates": [],
+        "explicit_sections": [],
+        "candidate_provisions": [
+          {
+            "act": "BNS",
+            "section": "351",
+            "title": "Criminal intimidation",
+            "source": "https://cytrain.ncrb.gov.in/staticpage/web_pages/ChaptersBNS.html",
+            "database_version": "bns-title-index-v1-2026-10-12",
+            "evidence": {
+              "segment_id": "1",
+              "start": 0.0,
+              "end": 7.36,
+              "quote": " I paid the money on the first of August. I did not sign the agreement. The witness said there was a threat. I have the payment receipt as evidence."
+            },
+            "matched_terms": [
+              "threat"
+            ],
+            "negated": true,
+            "status": "CANDIDATE_FOR_REVIEW",
+            "applicability": "NOT_DETERMINED"
+          }
+        ],
+        "database_version": "bns-title-index-v1-2026-10-12",
+        "database_sha256": "656f89ea05d5a45f67f73834efbbba8327d3ec06008de7e7b38032eaa2090f2e",
+        "incident_date": "2025-08-01",
+        "jurisdiction": "India",
+        "requires_legal_review": true,
+        "latency_ms": 0.2366839999012882,
+        "api_cost_usd": 0.0
+      }
+    },
+    {
+      "file": "legal_noisy.wav",
+      "asr": {
+        "segments": [
+          {
+            "id": "1",
+            "start": 0.0,
+            "end": 7.24,
+            "text": " I paid the money on the first of others. I did not sign the agreement. The witness said there was a threat. I had the payment to see the evidence.",
+            "avg_logprob": -0.38405828862576874,
+            "no_speech_prob": 0.014899269677698612,
+            "words": [
+              {
+                "word": " I",
+                "start": 0.0,
+                "end": 0.44,
+                "probability": 0.8315185904502869
+              },
+              {
+                "word": " paid",
+                "start": 0.44,
+                "end": 0.68,
+                "probability": 0.45858120918273926
+              },
+              {
+                "word": " the",
+                "start": 0.68,
+                "end": 0.86,
+                "probability": 0.788875162601471
+              },
+              {
+                "word": " money",
+                "start": 0.86,
+                "end": 1.02,
+                "probability": 0.9938985109329224
+              },
+              {
+                "word": " on",
+                "start": 1.02,
+                "end": 1.32,
+                "probability": 0.9922521710395813
+              },
+              {
+                "word": " the",
+                "start": 1.32,
+                "end": 1.46,
+                "probability": 0.9813065528869629
+              },
+              {
+                "word": " first",
+                "start": 1.46,
+                "end": 1.72,
+                "probability": 0.9668720364570618
+              },
+              {
+                "word": " of",
+                "start": 1.72,
+                "end": 1.92,
+                "probability": 0.1401791274547577
+              },
+              {
+                "word": " others.",
+                "start": 1.92,
+                "end": 2.22,
+                "probability": 0.44698625802993774
+              },
+              {
+                "word": " I",
+                "start": 2.58,
+                "end": 2.6,
+                "probability": 0.9937911629676819
+              },
+              {
+                "word": " did",
+                "start": 2.6,
+                "end": 2.8,
+                "probability": 0.9649080038070679
+              },
+              {
+                "word": " not",
+                "start": 2.8,
+                "end": 3.08,
+                "probability": 0.9989145994186401
+              },
+              {
+                "word": " sign",
+                "start": 3.08,
+                "end": 3.38,
+                "probability": 0.8966767191886902
+              },
+              {
+                "word": " the",
+                "start": 3.38,
+                "end": 3.58,
+                "probability": 0.3792674243450165
+              },
+              {
+                "word": " agreement.",
+                "start": 3.58,
+                "end": 3.94,
+                "probability": 0.9891658425331116
+              },
+              {
+                "word": " The",
+                "start": 4.26,
+                "end": 4.3,
+                "probability": 0.8547215461730957
+              },
+              {
+                "word": " witness",
+                "start": 4.3,
+                "end": 4.62,
+                "probability": 0.5832995176315308
+              },
+              {
+                "word": " said",
+                "start": 4.62,
+                "end": 4.9,
+                "probability": 0.874711811542511
+              },
+              {
+                "word": " there",
+                "start": 4.9,
+                "end": 5.12,
+                "probability": 0.8312451243400574
+              },
+              {
+                "word": " was",
+                "start": 5.12,
+                "end": 5.34,
+                "probability": 0.9915888905525208
+              },
+              {
+                "word": " a",
+                "start": 5.34,
+                "end": 5.46,
+                "probability": 0.9848452806472778
+              },
+              {
+                "word": " threat.",
+                "start": 5.46,
+                "end": 5.7,
+                "probability": 0.42565616965293884
+              },
+              {
+                "word": " I",
+                "start": 5.92,
+                "end": 5.92,
+                "probability": 0.9846584796905518
+              },
+              {
+                "word": " had",
+                "start": 5.92,
+                "end": 6.18,
+                "probability": 0.9290773868560791
+              },
+              {
+                "word": " the",
+                "start": 6.18,
+                "end": 6.24,
+                "probability": 0.9836375713348389
+              },
+              {
+                "word": " payment",
+                "start": 6.24,
+                "end": 6.48,
+                "probability": 0.9569854140281677
+              },
+              {
+                "word": " to",
+                "start": 6.48,
+                "end": 6.74,
+                "probability": 0.8118144869804382
+              },
+              {
+                "word": " see",
+                "start": 6.74,
+                "end": 6.84,
+                "probability": 0.9427280426025391
+              },
+              {
+                "word": " the",
+                "start": 6.84,
+                "end": 7.02,
+                "probability": 0.9798357486724854
+              },
+              {
+                "word": " evidence.",
+                "start": 7.02,
+                "end": 7.24,
+                "probability": 0.14123840630054474
+              }
+            ]
+          }
+        ],
+        "language": "en",
+        "language_probability": 1,
+        "audio_seconds": 7.62,
+        "model": "tiny multilingual (CPU int8, two threads)",
+        "api_cost_usd": 0.0,
+        "latency_ms": 705.7079459998477,
+        "model_load_ms": 0.00021100004232721403,
+        "real_time_factor": 0.09261259133856269,
+        "cpu_seconds": 2.0000354949999997,
+        "rss_after_mb": 319.5546875,
+        "transcript": "I paid the money on the first of others. I did not sign the agreement. The witness said there was a threat. I had the payment to see the evidence."
+      },
+      "resources": {
+        "wall_ms": 706.175,
+        "parent_cpu_seconds": 2.0027,
+        "parent_cpu_percent_one_core": 283.6,
+        "sampled_peak_parent_rss_mb": 371.0,
+        "memory_sampling_interval_ms": 10,
+        "api_cost_usd": 0.0
+      },
+      "wer": 0.1724137931034483,
+      "legal": {
+        "segments": [
+          {
+            "id": "1",
+            "start": 0.0,
+            "end": 7.24,
+            "text": " I paid the money on the first of others. I did not sign the agreement. The witness said there was a threat. I had the payment to see the evidence.",
+            "avg_logprob": -0.38405828862576874,
+            "no_speech_prob": 0.014899269677698612,
+            "words": [
+              {
+                "word": " I",
+                "start": 0.0,
+                "end": 0.44,
+                "probability": 0.8315185904502869
+              },
+              {
+                "word": " paid",
+                "start": 0.44,
+                "end": 0.68,
+                "probability": 0.45858120918273926
+              },
+              {
+                "word": " the",
+                "start": 0.68,
+                "end": 0.86,
+                "probability": 0.788875162601471
+              },
+              {
+                "word": " money",
+                "start": 0.86,
+                "end": 1.02,
+                "probability": 0.9938985109329224
+              },
+              {
+                "word": " on",
+                "start": 1.02,
+                "end": 1.32,
+                "probability": 0.9922521710395813
+              },
+              {
+                "word": " the",
+                "start": 1.32,
+                "end": 1.46,
+                "probability": 0.9813065528869629
+              },
+              {
+                "word": " first",
+                "start": 1.46,
+                "end": 1.72,
+                "probability": 0.9668720364570618
+              },
+              {
+                "word": " of",
+                "start": 1.72,
+                "end": 1.92,
+                "probability": 0.1401791274547577
+              },
+              {
+                "word": " others.",
+                "start": 1.92,
+                "end": 2.22,
+                "probability": 0.44698625802993774
+              },
+              {
+                "word": " I",
+                "start": 2.58,
+                "end": 2.6,
+                "probability": 0.9937911629676819
+              },
+              {
+                "word": " did",
+                "start": 2.6,
+                "end": 2.8,
+                "probability": 0.9649080038070679
+              },
+              {
+                "word": " not",
+                "start": 2.8,
+                "end": 3.08,
+                "probability": 0.9989145994186401
+              },
+              {
+                "word": " sign",
+                "start": 3.08,
+                "end": 3.38,
+                "probability": 0.8966767191886902
+              },
+              {
+                "word": " the",
+                "start": 3.38,
+                "end": 3.58,
+                "probability": 0.3792674243450165
+              },
+              {
+                "word": " agreement.",
+                "start": 3.58,
+                "end": 3.94,
+                "probability": 0.9891658425331116
+              },
+              {
+                "word": " The",
+                "start": 4.26,
+                "end": 4.3,
+                "probability": 0.8547215461730957
+              },
+              {
+                "word": " witness",
+                "start": 4.3,
+                "end": 4.62,
+                "probability": 0.5832995176315308
+              },
+              {
+                "word": " said",
+                "start": 4.62,
+                "end": 4.9,
+                "probability": 0.874711811542511
+              },
+              {
+                "word": " there",
+                "start": 4.9,
+                "end": 5.12,
+                "probability": 0.8312451243400574
+              },
+              {
+                "word": " was",
+                "start": 5.12,
+                "end": 5.34,
+                "probability": 0.9915888905525208
+              },
+              {
+                "word": " a",
+                "start": 5.34,
+                "end": 5.46,
+                "probability": 0.9848452806472778
+              },
+              {
+                "word": " threat.",
+                "start": 5.46,
+                "end": 5.7,
+                "probability": 0.42565616965293884
+              },
+              {
+                "word": " I",
+                "start": 5.92,
+                "end": 5.92,
+                "probability": 0.9846584796905518
+              },
+              {
+                "word": " had",
+                "start": 5.92,
+                "end": 6.18,
+                "probability": 0.9290773868560791
+              },
+              {
+                "word": " the",
+                "start": 6.18,
+                "end": 6.24,
+                "probability": 0.9836375713348389
+              },
+              {
+                "word": " payment",
+                "start": 6.24,
+                "end": 6.48,
+                "probability": 0.9569854140281677
+              },
+              {
+                "word": " to",
+                "start": 6.48,
+                "end": 6.74,
+                "probability": 0.8118144869804382
+              },
+              {
+                "word": " see",
+                "start": 6.74,
+                "end": 6.84,
+                "probability": 0.9427280426025391
+              },
+              {
+                "word": " the",
+                "start": 6.84,
+                "end": 7.02,
+                "probability": 0.9798357486724854
+              },
+              {
+                "word": " evidence.",
+                "start": 7.02,
+                "end": 7.24,
+                "probability": 0.14123840630054474
+              }
+            ],
+            "original_text": " I paid the money on the first of others. I did not sign the agreement. The witness said there was a threat. I had the payment to see the evidence.",
+            "corrected_text": "I paid the money on the first of others. I did not sign the agreement. The witness said there was a threat. I had the payment to see the evidence.",
+            "reason": "Normalize Unicode NFC and whitespace",
+            "semantic_change": false,
+            "label": "LEGALLY_RELEVANT",
+            "negated": true,
+            "uncertain_statement": false,
+            "terms": [
+              "agreement",
+              "paid",
+              "payment",
+              "threat",
+              "evidence",
+              "witness",
+              "fir"
+            ]
+          }
+        ],
+        "focused_segment_ids": [
+          "1"
+        ],
+        "parties": [],
+        "facts": [
+          {
+            "statement": " I paid the money on the first of others. I did not sign the agreement. The witness said there was a threat. I had the payment to see the evidence.",
+            "negated": true,
+            "uncertain": false,
+            "evidence": {
+              "segment_id": "1",
+              "start": 0.0,
+              "end": 7.24,
+              "quote": " I paid the money on the first of others. I did not sign the agreement. The witness said there was a threat. I had the payment to see the evidence."
+            },
+            "status": "UNVERIFIED_STATEMENT"
+          }
+        ],
+        "dates": [],
+        "explicit_sections": [],
+        "candidate_provisions": [
+          {
+            "act": "BNS",
+            "section": "351",
+            "title": "Criminal intimidation",
+            "source": "https://cytrain.ncrb.gov.in/staticpage/web_pages/ChaptersBNS.html",
+            "database_version": "bns-title-index-v1-2026-10-12",
+            "evidence": {
+              "segment_id": "1",
+              "start": 0.0,
+              "end": 7.24,
+              "quote": " I paid the money on the first of others. I did not sign the agreement. The witness said there was a threat. I had the payment to see the evidence."
+            },
+            "matched_terms": [
+              "threat"
+            ],
+            "negated": true,
+            "status": "CANDIDATE_FOR_REVIEW",
+            "applicability": "NOT_DETERMINED"
+          }
+        ],
+        "database_version": "bns-title-index-v1-2026-10-12",
+        "database_sha256": "656f89ea05d5a45f67f73834efbbba8327d3ec06008de7e7b38032eaa2090f2e",
+        "incident_date": "2025-08-01",
+        "jurisdiction": "India",
+        "requires_legal_review": true,
+        "latency_ms": 0.21867600003133703,
+        "api_cost_usd": 0.0
+      }
+    }
+  ],
+  "scope": "Two synthetic English speech clips (clean and noisy). No Hindi/Hinglish audio or real conversation accuracy claim."
+}

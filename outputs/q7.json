@@ -1,0 +1,571 @@
+{
+  "segments": [
+    {
+      "id": "e1",
+      "text": "Hello.",
+      "expected": "IRRELEVANT",
+      "original_text": "Hello.",
+      "corrected_text": "Hello.",
+      "reason": "No change",
+      "semantic_change": false,
+      "label": "IRRELEVANT",
+      "negated": false,
+      "uncertain_statement": false,
+      "terms": []
+    },
+    {
+      "id": "e2",
+      "text": "Party: Rahul Sharma, I paid on 2025-08-01.",
+      "expected": "LEGALLY_RELEVANT",
+      "original_text": "Party: Rahul Sharma, I paid on 2025-08-01.",
+      "corrected_text": "Party: Rahul Sharma, I paid on 2025-08-01.",
+      "reason": "No change",
+      "semantic_change": false,
+      "label": "LEGALLY_RELEVANT",
+      "negated": false,
+      "uncertain_statement": false,
+      "terms": [
+        "paid"
+      ]
+    },
+    {
+      "id": "e3",
+      "text": "I did not sign the agreement.",
+      "expected": "LEGALLY_RELEVANT",
+      "original_text": "I did not sign the agreement.",
+      "corrected_text": "I did not sign the agreement.",
+      "reason": "No change",
+      "semantic_change": false,
+      "label": "LEGALLY_RELEVANT",
+      "negated": true,
+      "uncertain_statement": false,
+      "terms": [
+        "agreement"
+      ]
+    },
+    {
+      "id": "e4",
+      "text": "The complaint mentions BNS section 351.",
+      "expected": "LEGALLY_RELEVANT",
+      "original_text": "The complaint mentions BNS section 351.",
+      "corrected_text": "The complaint mentions BNS section 351.",
+      "reason": "No change",
+      "semantic_change": false,
+      "label": "LEGALLY_RELEVANT",
+      "negated": false,
+      "uncertain_statement": false,
+      "terms": [
+        "section",
+        "complaint"
+      ]
+    },
+    {
+      "id": "e5",
+      "text": "Maybe he was there.",
+      "expected": "UNCERTAIN",
+      "original_text": "Maybe he was there.",
+      "corrected_text": "Maybe he was there.",
+      "reason": "No change",
+      "semantic_change": false,
+      "label": "UNCERTAIN",
+      "negated": false,
+      "uncertain_statement": true,
+      "terms": []
+    },
+    {
+      "id": "h1",
+      "text": "नमस्ते",
+      "expected": "IRRELEVANT",
+      "original_text": "नमस्ते",
+      "corrected_text": "नमस्ते",
+      "reason": "No change",
+      "semantic_change": false,
+      "label": "IRRELEVANT",
+      "negated": false,
+      "uncertain_statement": false,
+      "terms": []
+    },
+    {
+      "id": "h2",
+      "text": "उसने मुझे धमकी नहीं दी।",
+      "expected": "LEGALLY_RELEVANT",
+      "original_text": "उसने मुझे धमकी नहीं दी।",
+      "corrected_text": "उसने मुझे धमकी नहीं दी।",
+      "reason": "No change",
+      "semantic_change": false,
+      "label": "LEGALLY_RELEVANT",
+      "negated": true,
+      "uncertain_statement": false,
+      "terms": [
+        "धमकी"
+      ]
+    },
+    {
+      "id": "h3",
+      "text": "मेरे पास भुगतान का सबूत है।",
+      "expected": "LEGALLY_RELEVANT",
+      "original_text": "मेरे पास भुगतान का सबूत है।",
+      "corrected_text": "मेरे पास भुगतान का सबूत है।",
+      "reason": "No change",
+      "semantic_change": false,
+      "label": "LEGALLY_RELEVANT",
+      "negated": false,
+      "uncertain_statement": false,
+      "terms": [
+        "भुगतान",
+        "सबूत"
+      ]
+    },
+    {
+      "id": "h4",
+      "text": "शायद वह वहाँ था।",
+      "expected": "UNCERTAIN",
+      "original_text": "शायद वह वहाँ था।",
+      "corrected_text": "शायद वह वहाँ था।",
+      "reason": "No change",
+      "semantic_change": false,
+      "label": "UNCERTAIN",
+      "negated": false,
+      "uncertain_statement": true,
+      "terms": []
+    },
+    {
+      "id": "m1",
+      "text": "Usne dhamki nahi di.",
+      "expected": "LEGALLY_RELEVANT",
+      "original_text": "Usne dhamki nahi di.",
+      "corrected_text": "Usne dhamki nahi di.",
+      "reason": "No change",
+      "semantic_change": false,
+      "label": "LEGALLY_RELEVANT",
+      "negated": true,
+      "uncertain_statement": false,
+      "terms": [
+        "dhamki"
+      ]
+    },
+    {
+      "id": "m2",
+      "text": "Maine paise diye aur saboot hai.",
+      "expected": "LEGALLY_RELEVANT",
+      "original_text": "Maine paise diye aur saboot hai.",
+      "corrected_text": "Maine paise diye aur saboot hai.",
+      "reason": "No change",
+      "semantic_change": false,
+      "label": "LEGALLY_RELEVANT",
+      "negated": false,
+      "uncertain_statement": false,
+      "terms": [
+        "paise",
+        "saboot"
+      ]
+    },
+    {
+      "id": "m3",
+      "text": "Chai chahiye?",
+      "expected": "IRRELEVANT",
+      "original_text": "Chai chahiye?",
+      "corrected_text": "Chai chahiye?",
+      "reason": "No change",
+      "semantic_change": false,
+      "label": "IRRELEVANT",
+      "negated": false,
+      "uncertain_statement": false,
+      "terms": []
+    },
+    {
+      "id": "m4",
+      "text": "Shayad woh aaya tha.",
+      "expected": "UNCERTAIN",
+      "original_text": "Shayad woh aaya tha.",
+      "corrected_text": "Shayad woh aaya tha.",
+      "reason": "No change",
+      "semantic_change": false,
+      "label": "UNCERTAIN",
+      "negated": false,
+      "uncertain_statement": true,
+      "terms": []
+    },
+    {
+      "id": "e6",
+      "text": "Hello, the court hearing is on 12 October 2026.",
+      "expected": "LEGALLY_RELEVANT",
+      "original_text": "Hello, the court hearing is on 12 October 2026.",
+      "corrected_text": "Hello, the court hearing is on 12 October 2026.",
+      "reason": "No change",
+      "semantic_change": false,
+      "label": "LEGALLY_RELEVANT",
+      "negated": false,
+      "uncertain_statement": false,
+      "terms": [
+        "court",
+        "hearing"
+      ]
+    },
+    {
+      "id": "e7",
+      "text": "He mentioned section 999.",
+      "expected": "LEGALLY_RELEVANT",
+      "original_text": "He mentioned section 999.",
+      "corrected_text": "He mentioned section 999.",
+      "reason": "No change",
+      "semantic_change": false,
+      "label": "LEGALLY_RELEVANT",
+      "negated": false,
+      "uncertain_statement": false,
+      "terms": [
+        "section"
+      ]
+    },
+    {
+      "id": "e8",
+      "text": "He took my phone.",
+      "expected": "UNCERTAIN",
+      "original_text": "He took my phone.",
+      "corrected_text": "He took my phone.",
+      "reason": "No change",
+      "semantic_change": false,
+      "label": "UNCERTAIN",
+      "negated": false,
+      "uncertain_statement": false,
+      "terms": []
+    },
+    {
+      "id": "e9",
+      "text": "Perhaps the witness was mistaken.",
+      "expected": "LEGALLY_RELEVANT",
+      "original_text": "Perhaps the witness was mistaken.",
+      "corrected_text": "Perhaps the witness was mistaken.",
+      "reason": "No change",
+      "semantic_change": false,
+      "label": "LEGALLY_RELEVANT",
+      "negated": false,
+      "uncertain_statement": true,
+      "terms": [
+        "witness"
+      ]
+    },
+    {
+      "id": "e10",
+      "text": "Nice weather today.",
+      "expected": "IRRELEVANT",
+      "original_text": "Nice weather today.",
+      "corrected_text": "Nice weather today.",
+      "reason": "No change",
+      "semantic_change": false,
+      "label": "IRRELEVANT",
+      "negated": false,
+      "uncertain_statement": false,
+      "terms": []
+    }
+  ],
+  "focused_segment_ids": [
+    "e2",
+    "e3",
+    "e4",
+    "e5",
+    "h2",
+    "h3",
+    "h4",
+    "m1",
+    "m2",
+    "m4",
+    "e6",
+    "e7",
+    "e8",
+    "e9"
+  ],
+  "parties": [
+    {
+      "name": "Rahul Sharma",
+      "evidence": {
+        "segment_id": "e2",
+        "start": null,
+        "end": null,
+        "quote": "Party: Rahul Sharma, I paid on 2025-08-01."
+      }
+    }
+  ],
+  "facts": [
+    {
+      "statement": "Party: Rahul Sharma, I paid on 2025-08-01.",
+      "negated": false,
+      "uncertain": false,
+      "evidence": {
+        "segment_id": "e2",
+        "start": null,
+        "end": null,
+        "quote": "Party: Rahul Sharma, I paid on 2025-08-01."
+      },
+      "status": "UNVERIFIED_STATEMENT"
+    },
+    {
+      "statement": "I did not sign the agreement.",
+      "negated": true,
+      "uncertain": false,
+      "evidence": {
+        "segment_id": "e3",
+        "start": null,
+        "end": null,
+        "quote": "I did not sign the agreement."
+      },
+      "status": "UNVERIFIED_STATEMENT"
+    },
+    {
+      "statement": "The complaint mentions BNS section 351.",
+      "negated": false,
+      "uncertain": false,
+      "evidence": {
+        "segment_id": "e4",
+        "start": null,
+        "end": null,
+        "quote": "The complaint mentions BNS section 351."
+      },
+      "status": "UNVERIFIED_STATEMENT"
+    },
+    {
+      "statement": "Maybe he was there.",
+      "negated": false,
+      "uncertain": true,
+      "evidence": {
+        "segment_id": "e5",
+        "start": null,
+        "end": null,
+        "quote": "Maybe he was there."
+      },
+      "status": "UNVERIFIED_STATEMENT"
+    },
+    {
+      "statement": "उसने मुझे धमकी नहीं दी।",
+      "negated": true,
+      "uncertain": false,
+      "evidence": {
+        "segment_id": "h2",
+        "start": null,
+        "end": null,
+        "quote": "उसने मुझे धमकी नहीं दी।"
+      },
+      "status": "UNVERIFIED_STATEMENT"
+    },
+    {
+      "statement": "मेरे पास भुगतान का सबूत है।",
+      "negated": false,
+      "uncertain": false,
+      "evidence": {
+        "segment_id": "h3",
+        "start": null,
+        "end": null,
+        "quote": "मेरे पास भुगतान का सबूत है।"
+      },
+      "status": "UNVERIFIED_STATEMENT"
+    },
+    {
+      "statement": "शायद वह वहाँ था।",
+      "negated": false,
+      "uncertain": true,
+      "evidence": {
+        "segment_id": "h4",
+        "start": null,
+        "end": null,
+        "quote": "शायद वह वहाँ था।"
+      },
+      "status": "UNVERIFIED_STATEMENT"
+    },
+    {
+      "statement": "Usne dhamki nahi di.",
+      "negated": true,
+      "uncertain": false,
+      "evidence": {
+        "segment_id": "m1",
+        "start": null,
+        "end": null,
+        "quote": "Usne dhamki nahi di."
+      },
+      "status": "UNVERIFIED_STATEMENT"
+    },
+    {
+      "statement": "Maine paise diye aur saboot hai.",
+      "negated": false,
+      "uncertain": false,
+      "evidence": {
+        "segment_id": "m2",
+        "start": null,
+        "end": null,
+        "quote": "Maine paise diye aur saboot hai."
+      },
+      "status": "UNVERIFIED_STATEMENT"
+    },
+    {
+      "statement": "Shayad woh aaya tha.",
+      "negated": false,
+      "uncertain": true,
+      "evidence": {
+        "segment_id": "m4",
+        "start": null,
+        "end": null,
+        "quote": "Shayad woh aaya tha."
+      },
+      "status": "UNVERIFIED_STATEMENT"
+    },
+    {
+      "statement": "Hello, the court hearing is on 12 October 2026.",
+      "negated": false,
+      "uncertain": false,
+      "evidence": {
+        "segment_id": "e6",
+        "start": null,
+        "end": null,
+        "quote": "Hello, the court hearing is on 12 October 2026."
+      },
+      "status": "UNVERIFIED_STATEMENT"
+    },
+    {
+      "statement": "He mentioned section 999.",
+      "negated": false,
+      "uncertain": false,
+      "evidence": {
+        "segment_id": "e7",
+        "start": null,
+        "end": null,
+        "quote": "He mentioned section 999."
+      },
+      "status": "UNVERIFIED_STATEMENT"
+    },
+    {
+      "statement": "He took my phone.",
+      "negated": false,
+      "uncertain": false,
+      "evidence": {
+        "segment_id": "e8",
+        "start": null,
+        "end": null,
+        "quote": "He took my phone."
+      },
+      "status": "UNVERIFIED_STATEMENT"
+    },
+    {
+      "statement": "Perhaps the witness was mistaken.",
+      "negated": false,
+      "uncertain": true,
+      "evidence": {
+        "segment_id": "e9",
+        "start": null,
+        "end": null,
+        "quote": "Perhaps the witness was mistaken."
+      },
+      "status": "UNVERIFIED_STATEMENT"
+    }
+  ],
+  "dates": [
+    {
+      "text": "2025-08-01",
+      "evidence": {
+        "segment_id": "e2",
+        "start": null,
+        "end": null,
+        "quote": "Party: Rahul Sharma, I paid on 2025-08-01."
+      },
+      "normalized": null
+    },
+    {
+      "text": "12 October 2026",
+      "evidence": {
+        "segment_id": "e6",
+        "start": null,
+        "end": null,
+        "quote": "Hello, the court hearing is on 12 October 2026."
+      },
+      "normalized": null
+    }
+  ],
+  "explicit_sections": [
+    {
+      "mention": "BNS section 351",
+      "act": "BNS",
+      "section": "351",
+      "status": "VERIFIED_REFERENCE",
+      "provision": {
+        "act": "BNS",
+        "section": "351",
+        "title": "Criminal intimidation",
+        "effective_from": "2024-07-01",
+        "effective_to": null,
+        "source": "https://cytrain.ncrb.gov.in/staticpage/web_pages/ChaptersBNS.html",
+        "official_act": "https://www.indiacode.nic.in/handle/123456789/20062",
+        "keywords": [
+          "threat",
+          "धमकी",
+          "dhamki"
+        ]
+      },
+      "evidence": {
+        "segment_id": "e4",
+        "start": null,
+        "end": null,
+        "quote": "The complaint mentions BNS section 351."
+      },
+      "applicability": "NOT_DETERMINED"
+    },
+    {
+      "mention": "section 999",
+      "act": null,
+      "section": "999",
+      "status": "UNVERIFIED_REFERENCE",
+      "provision": null,
+      "evidence": {
+        "segment_id": "e7",
+        "start": null,
+        "end": null,
+        "quote": "He mentioned section 999."
+      },
+      "applicability": "NOT_DETERMINED"
+    }
+  ],
+  "candidate_provisions": [
+    {
+      "act": "BNS",
+      "section": "351",
+      "title": "Criminal intimidation",
+      "source": "https://cytrain.ncrb.gov.in/staticpage/web_pages/ChaptersBNS.html",
+      "database_version": "bns-title-index-v1-2026-10-12",
+      "evidence": {
+        "segment_id": "h2",
+        "start": null,
+        "end": null,
+        "quote": "उसने मुझे धमकी नहीं दी।"
+      },
+      "matched_terms": [
+        "धमकी"
+      ],
+      "negated": true,
+      "status": "CANDIDATE_FOR_REVIEW",
+      "applicability": "NOT_DETERMINED"
+    },
+    {
+      "act": "BNS",
+      "section": "351",
+      "title": "Criminal intimidation",
+      "source": "https://cytrain.ncrb.gov.in/staticpage/web_pages/ChaptersBNS.html",
+      "database_version": "bns-title-index-v1-2026-10-12",
+      "evidence": {
+        "segment_id": "m1",
+        "start": null,
+        "end": null,
+        "quote": "Usne dhamki nahi di."
+      },
+      "matched_terms": [
+        "dhamki"
+      ],
+      "negated": true,
+      "status": "CANDIDATE_FOR_REVIEW",
+      "applicability": "NOT_DETERMINED"
+    }
+  ],
+  "database_version": "bns-title-index-v1-2026-10-12",
+  "database_sha256": "656f89ea05d5a45f67f73834efbbba8327d3ec06008de7e7b38032eaa2090f2e",
+  "incident_date": "2025-08-01",
+  "jurisdiction": "India",
+  "requires_legal_review": true,
+  "latency_ms": 3.2814589999361488,
+  "api_cost_usd": 0.0
+}

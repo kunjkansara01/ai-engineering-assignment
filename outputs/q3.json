@@ -1,0 +1,83 @@
+[
+  {
+    "original_text": "Paracetamol",
+    "corrected_text": "Paracetamol",
+    "reason": "No change",
+    "semantic_change": false,
+    "confidence": 0.98,
+    "classification": "HIGH_CONFIDENCE",
+    "proposed_text": null,
+    "correction_status": "UNCHANGED"
+  },
+  {
+    "original_text": "500 mg",
+    "corrected_text": "500 mg",
+    "reason": "No change",
+    "semantic_change": false,
+    "confidence": 0.96,
+    "classification": "HIGH_CONFIDENCE",
+    "proposed_text": null,
+    "correction_status": "UNCHANGED"
+  },
+  {
+    "original_text": "twlce daily",
+    "corrected_text": "twlce daily",
+    "reason": "No change",
+    "semantic_change": false,
+    "confidence": 0.61,
+    "classification": "REVIEW_REQUIRED",
+    "proposed_text": "twice daily",
+    "correction_status": "PENDING_REVIEW",
+    "proposal_reason": "Possible OCR l/i confusion; reviewer must confirm"
+  },
+  {
+    "original_text": "for 5 days",
+    "corrected_text": "for 5 days",
+    "reason": "No change",
+    "semantic_change": false,
+    "confidence": 0.94,
+    "classification": "HIGH_CONFIDENCE",
+    "proposed_text": null,
+    "correction_status": "UNCHANGED"
+  },
+  {
+    "original_text": "with",
+    "corrected_text": "with",
+    "reason": "No change",
+    "semantic_change": false,
+    "confidence": 0.14,
+    "classification": "LOW_CONFIDENCE",
+    "proposed_text": null,
+    "correction_status": "UNCHANGED"
+  },
+  {
+    "original_text": "water",
+    "corrected_text": "water",
+    "reason": "No change",
+    "semantic_change": false,
+    "confidence": 0.94,
+    "classification": "HIGH_CONFIDENCE",
+    "proposed_text": null,
+    "correction_status": "UNCHANGED"
+  },
+  {
+    "original_text": "Unknown Drug",
+    "corrected_text": "Unknown Drug",
+    "reason": "No change",
+    "semantic_change": false,
+    "confidence": 0.58,
+    "classification": "LOW_CONFIDENCE",
+    "proposed_text": null,
+    "correction_status": "UNCHANGED"
+  },
+  {
+    "original_text": "UnknownDrug",
+    "corrected_text": "UnknownDrug",
+    "reason": "No change",
+    "semantic_change": false,
+    "confidence": 0.38,
+    "classification": "LOW_CONFIDENCE",
+    "proposed_text": null,
+    "correction_status": "UNCHANGED"
+  }
+]

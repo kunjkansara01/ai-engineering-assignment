@@ -1,0 +1,16 @@
+{
+  "dataset": "Synthetic printed English document, same fixture as functional tests; not handwriting evaluation",
+  "clear_field_exact_match": 1.0,
+  "clear_text_wer": 0.0,
+  "uncached_ms": [
+    219.936,
+    220.775,
+    205.639,
+    215.569,
+    197.151
+  ],
+  "uncached_p50_ms": 215.569,
+  "cached_p50_ms": 0.846,
+  "cached_n": 20,
+  "api_cost_usd": 0.0
+}

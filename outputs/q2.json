@@ -1,0 +1,37 @@
+{
+  "clear": {
+    "is_usable": true,
+    "blur_score": 920.765,
+    "brightness": 239.545,
+    "contrast": 230.0,
+    "reason": "Passed heuristic quality checks"
+  },
+  "blurred": {
+    "is_usable": false,
+    "blur_score": 0.358,
+    "brightness": 239.546,
+    "contrast": 68.0,
+    "reason": "blurred or no visible text"
+  },
+  "dark": {
+    "is_usable": false,
+    "blur_score": 29.915,
+    "brightness": 43.001,
+    "contrast": 42.0,
+    "reason": "blurred or no visible text; underexposed"
+  },
+  "rotated": {
+    "is_usable": true,
+    "blur_score": 920.765,
+    "brightness": 239.545,
+    "contrast": 230.0,
+    "reason": "Passed heuristic quality checks"
+  },
+  "blank": {
+    "is_usable": false,
+    "blur_score": 0.0,
+    "brightness": 245.0,
+    "contrast": 0.0,
+    "reason": "blurred or no visible text; low contrast"
+  }
+}

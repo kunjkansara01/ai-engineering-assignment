@@ -1,0 +1,8 @@
+numpy==2.3.5
+opencv-python-headless==4.11.0.86
+pytesseract==0.3.13
+Pillow==12.3.0
+psutil==7.0.0
+nbformat==5.10.4
+nbclient==0.10.2
+ipykernel==7.4.0

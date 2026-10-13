@@ -1,0 +1,57 @@
+{
+  "documents": [
+    {
+      "id": "D101",
+      "quality": 0.92,
+      "time": 104,
+      "category": "ACCEPT"
+    },
+    {
+      "id": "D102",
+      "quality": 0.92,
+      "time": 106,
+      "category": "ACCEPT"
+    },
+    {
+      "id": "D103",
+      "quality": 0.81,
+      "time": 103,
+      "category": "ACCEPT"
+    },
+    {
+      "id": "D104",
+      "quality": 0.28,
+      "time": 105,
+      "category": "RETAKE"
+    },
+    {
+      "id": "D105",
+      "quality": 0.74,
+      "time": 105,
+      "category": "REVIEW"
+    }
+  ],
+  "counts": {
+    "ACCEPT": 3,
+    "REVIEW": 1,
+    "RETAKE": 1
+  },
+  "average_quality": 0.734,
+  "duplicates_removed": 2,
+  "duplicate_audit": [
+    {
+      "id": "D101",
+      "incoming_index": 3,
+      "kept_time": 104,
+      "discarded_time": 101,
+      "reason": "latest_timestamp"
+    },
+    {
+      "id": "D102",
+      "incoming_index": 6,
+      "kept_time": 106,
+      "discarded_time": 102,
+      "reason": "latest_timestamp"
+    }
+  ]
+}
